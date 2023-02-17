@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD8C84D2299FFCDB00FA86C2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD8C84D0299FFCDB00FA86C2 /* DataModel.xcdatamodeld */; };
+		CD8C84D529A00A6700FA86C2 /* ListViewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C84D429A00A6700FA86C2 /* ListViewTask.swift */; };
 		CDCB86F1299FFA0B002BFC48 /* learningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB86F0299FFA0B002BFC48 /* learningApp.swift */; };
 		CDCB86F3299FFA0B002BFC48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB86F2299FFA0B002BFC48 /* ContentView.swift */; };
 		CDCB86F5299FFA0C002BFC48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCB86F4299FFA0C002BFC48 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		CD8C84D1299FFCDB00FA86C2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CD8C84D429A00A6700FA86C2 /* ListViewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTask.swift; sourceTree = "<group>"; };
 		CDCB86ED299FFA0B002BFC48 /* learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCB86F0299FFA0B002BFC48 /* learningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learningApp.swift; sourceTree = "<group>"; };
 		CDCB86F2299FFA0B002BFC48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,11 +36,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD8C84D329A00A4C00FA86C2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CD8C84D429A00A6700FA86C2 /* ListViewTask.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		CDCB86E4299FFA0A002BFC48 = {
 			isa = PBXGroup;
 			children = (
-				CD8C84D0299FFCDB00FA86C2 /* DataModel.xcdatamodeld */,
+				CD8C84D329A00A4C00FA86C2 /* Components */,
 				CDCB86EF299FFA0B002BFC48 /* learning */,
+				CD8C84D0299FFCDB00FA86C2 /* DataModel.xcdatamodeld */,
 				CDCB86EE299FFA0B002BFC48 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 				CD8C84D2299FFCDB00FA86C2 /* DataModel.xcdatamodeld in Sources */,
 				CDCB86F3299FFA0B002BFC48 /* ContentView.swift in Sources */,
 				CDCB86F1299FFA0B002BFC48 /* learningApp.swift in Sources */,
+				CD8C84D529A00A6700FA86C2 /* ListViewTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
