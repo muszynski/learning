@@ -14,6 +14,7 @@
 		CDAB554529A7D68E0005F6B1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB554429A7D68E0005F6B1 /* HomeView.swift */; };
 		CDAB554729A7D6CB0005F6B1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB554629A7D6CA0005F6B1 /* ListView.swift */; };
 		CDAB554929A7D6F00005F6B1 /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB554829A7D6F00005F6B1 /* RemindersView.swift */; };
+		CDAB554F29A7E1540005F6B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDAB554D29A7E1540005F6B1 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		CDAB554429A7D68E0005F6B1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CDAB554629A7D6CA0005F6B1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		CDAB554829A7D6F00005F6B1 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
+		CDAB554E29A7E1540005F6B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		CDAB553429A7D39F0005F6B1 /* LearningPath */ = {
 			isa = PBXGroup;
 			children = (
+				CDAB554C29A7E13D0005F6B1 /* Data */,
 				CDAB554329A7D4EC0005F6B1 /* View */,
 				CDAB553529A7D39F0005F6B1 /* LearningPathApp.swift */,
 				CDAB553929A7D3A40005F6B1 /* Assets.xcassets */,
@@ -82,6 +85,14 @@
 				CDAB554829A7D6F00005F6B1 /* RemindersView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CDAB554C29A7E13D0005F6B1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CDAB554D29A7E1540005F6B1 /* Model.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				CDAB554929A7D6F00005F6B1 /* RemindersView.swift in Sources */,
 				CDAB553829A7D39F0005F6B1 /* NavigationTabs.swift in Sources */,
 				CDAB553629A7D39F0005F6B1 /* LearningPathApp.swift in Sources */,
+				CDAB554F29A7E1540005F6B1 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +371,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CDAB554D29A7E1540005F6B1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CDAB554E29A7E1540005F6B1 /* Model.xcdatamodel */,
+			);
+			currentVersion = CDAB554E29A7E1540005F6B1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CDAB552A29A7D39F0005F6B1 /* Project object */;
 }
