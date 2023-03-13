@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='String'/>
+        <page name='Number'/>
+        <page name='Simple functions numbers and string'/>
+        <page name='Next ten functions'/>
+        <page name='Class'/>
+        <page name='For - pętle'/>
+        <page name='Struktury'/>
+    </pages>
+</playground>
