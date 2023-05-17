@@ -30,6 +30,8 @@
 		CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */; };
 		CDAF7A352A1539A900F4976C /* DonationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A342A1539A900F4976C /* DonationBanner.swift */; };
 		CDAF7A372A15432600F4976C /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A362A15432600F4976C /* PostItem.swift */; };
+		CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */; };
+		CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3E2A15595A00F4976C /* Blik.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBanner.swift; sourceTree = "<group>"; };
 		CDAF7A342A1539A900F4976C /* DonationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBanner.swift; sourceTree = "<group>"; };
 		CDAF7A362A15432600F4976C /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBannerForm.swift; sourceTree = "<group>"; };
+		CDAF7A3E2A15595A00F4976C /* Blik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blik.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		CDAF7A2F2A15137600F4976C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CDAF7A3B2A1551BC00F4976C /* DonationForm */,
 				CDAF7A382A154F7100F4976C /* StartScreen */,
 			);
 			path = Components;
@@ -188,6 +193,15 @@
 				CDAF7A362A15432600F4976C /* PostItem.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		CDAF7A3B2A1551BC00F4976C /* DonationForm */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */,
+				CDAF7A3E2A15595A00F4976C /* Blik.swift */,
+			);
+			path = DonationForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +292,9 @@
 				CDAF7A0A2A14ECED00F4976C /* AktualnosciView.swift in Sources */,
 				CDAF7A352A1539A900F4976C /* DonationBanner.swift in Sources */,
 				CDAF7A102A14ED1D00F4976C /* FAQView.swift in Sources */,
+				CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */,
 				CDAF79FB2A14E61400F4976C /* ContentView.swift in Sources */,
+				CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */,
 				CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */,
 				CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */,
 			);
