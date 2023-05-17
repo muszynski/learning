@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD61E6C129F5896D00F8F3B4 /* FundacjaSantanderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61E6C029F5896D00F8F3B4 /* FundacjaSantanderApp.swift */; };
+		CD61E6C529F5897000F8F3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD61E6C429F5897000F8F3B4 /* Assets.xcassets */; };
+		CD61E6C829F5897000F8F3B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD61E6C729F5897000F8F3B4 /* Preview Assets.xcassets */; };
+		CD61E6D829F58F3200F8F3B4 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = CD61E6D729F58F3200F8F3B4 /* XMLParsing */; };
+		CD6E84D329F6B0B8001DC394 /* WPPostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E84D229F6B0B8001DC394 /* WPPostList.swift */; };
+		CD6E84D829F6D7EF001DC394 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E84D729F6D7EF001DC394 /* Auth.swift */; };
+		CD6E84DA29F6D805001DC394 /* WPPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E84D929F6D805001DC394 /* WPPost.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CD61E6BD29F5896D00F8F3B4 /* FundacjaSantander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundacjaSantander.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD61E6C029F5896D00F8F3B4 /* FundacjaSantanderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundacjaSantanderApp.swift; sourceTree = "<group>"; };
+		CD61E6C429F5897000F8F3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD61E6C729F5897000F8F3B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD6E84D229F6B0B8001DC394 /* WPPostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPPostList.swift; sourceTree = "<group>"; };
+		CD6E84D629F6B36D001DC394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CD6E84D729F6D7EF001DC394 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		CD6E84D929F6D805001DC394 /* WPPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPPost.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD61E6BA29F5896D00F8F3B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD61E6D829F58F3200F8F3B4 /* XMLParsing in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD61E6B429F5896D00F8F3B4 = {
+			isa = PBXGroup;
+			children = (
+				CD61E6CE29F5898200F8F3B4 /* App */,
+				CD61E6BF29F5896D00F8F3B4 /* FundacjaSantander */,
+				CD61E6BE29F5896D00F8F3B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD61E6BE29F5896D00F8F3B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD61E6BD29F5896D00F8F3B4 /* FundacjaSantander.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD61E6BF29F5896D00F8F3B4 /* FundacjaSantander */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E84D629F6B36D001DC394 /* Info.plist */,
+				CD61E6C029F5896D00F8F3B4 /* FundacjaSantanderApp.swift */,
+				CD61E6C429F5897000F8F3B4 /* Assets.xcassets */,
+				CD61E6C629F5897000F8F3B4 /* Preview Content */,
+			);
+			path = FundacjaSantander;
+			sourceTree = "<group>";
+		};
+		CD61E6C629F5897000F8F3B4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD61E6C729F5897000F8F3B4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD61E6CE29F5898200F8F3B4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E84DB29F6D84B001DC394 /* Views */,
+				CD6E84D129F6B05B001DC394 /* GetPost */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CD6E84D129F6B05B001DC394 /* GetPost */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E84D729F6D7EF001DC394 /* Auth.swift */,
+				CD6E84D929F6D805001DC394 /* WPPost.swift */,
+			);
+			path = GetPost;
+			sourceTree = "<group>";
+		};
+		CD6E84DB29F6D84B001DC394 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E84D229F6B0B8001DC394 /* WPPostList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD61E6BC29F5896D00F8F3B4 /* FundacjaSantander */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD61E6CB29F5897000F8F3B4 /* Build configuration list for PBXNativeTarget "FundacjaSantander" */;
+			buildPhases = (
+				CD61E6B929F5896D00F8F3B4 /* Sources */,
+				CD61E6BA29F5896D00F8F3B4 /* Frameworks */,
+				CD61E6BB29F5896D00F8F3B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FundacjaSantander;
+			packageProductDependencies = (
+				CD61E6D729F58F3200F8F3B4 /* XMLParsing */,
+			);
+			productName = FundacjaSantander;
+			productReference = CD61E6BD29F5896D00F8F3B4 /* FundacjaSantander.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD61E6B529F5896D00F8F3B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CD61E6BC29F5896D00F8F3B4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = CD61E6B829F5896D00F8F3B4 /* Build configuration list for PBXProject "FundacjaSantander" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD61E6B429F5896D00F8F3B4;
+			packageReferences = (
+				CD61E6D629F58F3200F8F3B4 /* XCRemoteSwiftPackageReference "XMLParsing" */,
+			);
+			productRefGroup = CD61E6BE29F5896D00F8F3B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD61E6BC29F5896D00F8F3B4 /* FundacjaSantander */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD61E6BB29F5896D00F8F3B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD61E6C829F5897000F8F3B4 /* Preview Assets.xcassets in Resources */,
+				CD61E6C529F5897000F8F3B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD61E6B929F5896D00F8F3B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6E84DA29F6D805001DC394 /* WPPost.swift in Sources */,
+				CD61E6C129F5896D00F8F3B4 /* FundacjaSantanderApp.swift in Sources */,
+				CD6E84D329F6B0B8001DC394 /* WPPostList.swift in Sources */,
+				CD6E84D829F6D7EF001DC394 /* Auth.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CD61E6C929F5897000F8F3B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD61E6CA29F5897000F8F3B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD61E6CC29F5897000F8F3B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantander/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NMXNJ3368;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FundacjaSantander/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantander;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD61E6CD29F5897000F8F3B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantander/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NMXNJ3368;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FundacjaSantander/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantander;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD61E6B829F5896D00F8F3B4 /* Build configuration list for PBXProject "FundacjaSantander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD61E6C929F5897000F8F3B4 /* Debug */,
+				CD61E6CA29F5897000F8F3B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD61E6CB29F5897000F8F3B4 /* Build configuration list for PBXNativeTarget "FundacjaSantander" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD61E6CC29F5897000F8F3B4 /* Debug */,
+				CD61E6CD29F5897000F8F3B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD61E6D629F58F3200F8F3B4 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ShawnMoore/XMLParsing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD61E6D729F58F3200F8F3B4 /* XMLParsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD61E6D629F58F3200F8F3B4 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			productName = XMLParsing;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CD61E6B529F5896D00F8F3B4 /* Project object */;
+}

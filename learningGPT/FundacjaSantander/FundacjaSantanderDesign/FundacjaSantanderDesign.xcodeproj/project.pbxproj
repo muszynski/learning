@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF79F82A14E61400F4976C /* FundacjaSantanderDesignApp.swift */; };
+		CDAF79FB2A14E61400F4976C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF79FA2A14E61400F4976C /* ContentView.swift */; };
+		CDAF79FD2A14E61500F4976C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAF79FC2A14E61500F4976C /* Assets.xcassets */; };
+		CDAF7A002A14E61500F4976C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAF79FF2A14E61500F4976C /* Preview Assets.xcassets */; };
+		CDAF7A082A14ECD700F4976C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A072A14ECD700F4976C /* StartView.swift */; };
+		CDAF7A0A2A14ECED00F4976C /* AktualnosciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A092A14ECED00F4976C /* AktualnosciView.swift */; };
+		CDAF7A0C2A14ECFF00F4976C /* PomagajView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A0B2A14ECFF00F4976C /* PomagajView.swift */; };
+		CDAF7A0E2A14ED0F00F4976C /* ProjektyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A0D2A14ED0F00F4976C /* ProjektyView.swift */; };
+		CDAF7A102A14ED1D00F4976C /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A0F2A14ED1D00F4976C /* FAQView.swift */; };
+		CDAF7A1E2A14FCBF00F4976C /* SantanderHeadline-BoldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A132A14FCBF00F4976C /* SantanderHeadline-BoldIt.ttf */; };
+		CDAF7A1F2A14FCBF00F4976C /* SantanderHeadline-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A142A14FCBF00F4976C /* SantanderHeadline-Bold.ttf */; };
+		CDAF7A202A14FCBF00F4976C /* SantanderHeadline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A152A14FCBF00F4976C /* SantanderHeadline-Regular.ttf */; };
+		CDAF7A212A14FCBF00F4976C /* SantanderHeadline-It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A162A14FCBF00F4976C /* SantanderHeadline-It.ttf */; };
+		CDAF7A222A14FCBF00F4976C /* SantanderText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A182A14FCBF00F4976C /* SantanderText-BoldItalic.ttf */; };
+		CDAF7A232A14FCBF00F4976C /* SantanderText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A192A14FCBF00F4976C /* SantanderText-Italic.ttf */; };
+		CDAF7A242A14FCBF00F4976C /* SantanderText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A1A2A14FCBF00F4976C /* SantanderText-Light.ttf */; };
+		CDAF7A252A14FCBF00F4976C /* SantanderText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A1B2A14FCBF00F4976C /* SantanderText-Bold.ttf */; };
+		CDAF7A262A14FCBF00F4976C /* SantanderText-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A1C2A14FCBF00F4976C /* SantanderText-LightItalic.ttf */; };
+		CDAF7A272A14FCBF00F4976C /* SantanderText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDAF7A1D2A14FCBF00F4976C /* SantanderText-Regular.ttf */; };
+		CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A2D2A1512F100F4976C /* TabBarItem.swift */; };
+		CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */; };
+		CDAF7A352A1539A900F4976C /* DonationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A342A1539A900F4976C /* DonationBanner.swift */; };
+		CDAF7A372A15432600F4976C /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A362A15432600F4976C /* PostItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDAF79F52A14E61400F4976C /* FundacjaSantanderDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundacjaSantanderDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDAF79F82A14E61400F4976C /* FundacjaSantanderDesignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundacjaSantanderDesignApp.swift; sourceTree = "<group>"; };
+		CDAF79FA2A14E61400F4976C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CDAF79FC2A14E61500F4976C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDAF79FF2A14E61500F4976C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CDAF7A072A14ECD700F4976C /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		CDAF7A092A14ECED00F4976C /* AktualnosciView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktualnosciView.swift; sourceTree = "<group>"; };
+		CDAF7A0B2A14ECFF00F4976C /* PomagajView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomagajView.swift; sourceTree = "<group>"; };
+		CDAF7A0D2A14ED0F00F4976C /* ProjektyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjektyView.swift; sourceTree = "<group>"; };
+		CDAF7A0F2A14ED1D00F4976C /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		CDAF7A132A14FCBF00F4976C /* SantanderHeadline-BoldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderHeadline-BoldIt.ttf"; sourceTree = "<group>"; };
+		CDAF7A142A14FCBF00F4976C /* SantanderHeadline-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderHeadline-Bold.ttf"; sourceTree = "<group>"; };
+		CDAF7A152A14FCBF00F4976C /* SantanderHeadline-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderHeadline-Regular.ttf"; sourceTree = "<group>"; };
+		CDAF7A162A14FCBF00F4976C /* SantanderHeadline-It.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderHeadline-It.ttf"; sourceTree = "<group>"; };
+		CDAF7A182A14FCBF00F4976C /* SantanderText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderText-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CDAF7A192A14FCBF00F4976C /* SantanderText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderText-Italic.ttf"; sourceTree = "<group>"; };
+		CDAF7A1A2A14FCBF00F4976C /* SantanderText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderText-Light.ttf"; sourceTree = "<group>"; };
+		CDAF7A1B2A14FCBF00F4976C /* SantanderText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderText-Bold.ttf"; sourceTree = "<group>"; };
+		CDAF7A1C2A14FCBF00F4976C /* SantanderText-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderText-LightItalic.ttf"; sourceTree = "<group>"; };
+		CDAF7A1D2A14FCBF00F4976C /* SantanderText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SantanderText-Regular.ttf"; sourceTree = "<group>"; };
+		CDAF7A282A14FD8500F4976C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CDAF7A2D2A1512F100F4976C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBanner.swift; sourceTree = "<group>"; };
+		CDAF7A342A1539A900F4976C /* DonationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBanner.swift; sourceTree = "<group>"; };
+		CDAF7A362A15432600F4976C /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDAF79F22A14E61400F4976C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDAF79EC2A14E61400F4976C = {
+			isa = PBXGroup;
+			children = (
+				CDAF79F72A14E61400F4976C /* FundacjaSantanderDesign */,
+				CDAF79F62A14E61400F4976C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDAF79F62A14E61400F4976C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF79F52A14E61400F4976C /* FundacjaSantanderDesign.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDAF79F72A14E61400F4976C /* FundacjaSantanderDesign */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A282A14FD8500F4976C /* Info.plist */,
+				CDAF7A112A14FCBF00F4976C /* SantanderFonts */,
+				CDAF7A062A14ECC400F4976C /* Views */,
+				CDAF79F82A14E61400F4976C /* FundacjaSantanderDesignApp.swift */,
+				CDAF79FA2A14E61400F4976C /* ContentView.swift */,
+				CDAF79FC2A14E61500F4976C /* Assets.xcassets */,
+				CDAF79FE2A14E61500F4976C /* Preview Content */,
+			);
+			path = FundacjaSantanderDesign;
+			sourceTree = "<group>";
+		};
+		CDAF79FE2A14E61500F4976C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF79FF2A14E61500F4976C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CDAF7A062A14ECC400F4976C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A3A2A154F9B00F4976C /* List */,
+				CDAF7A392A154F8300F4976C /* Navigation */,
+				CDAF7A2F2A15137600F4976C /* Components */,
+				CDAF7A072A14ECD700F4976C /* StartView.swift */,
+				CDAF7A092A14ECED00F4976C /* AktualnosciView.swift */,
+				CDAF7A0B2A14ECFF00F4976C /* PomagajView.swift */,
+				CDAF7A0D2A14ED0F00F4976C /* ProjektyView.swift */,
+				CDAF7A0F2A14ED1D00F4976C /* FAQView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDAF7A112A14FCBF00F4976C /* SantanderFonts */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A122A14FCBF00F4976C /* SantanderHeadline */,
+				CDAF7A172A14FCBF00F4976C /* SantanderText */,
+			);
+			path = SantanderFonts;
+			sourceTree = "<group>";
+		};
+		CDAF7A122A14FCBF00F4976C /* SantanderHeadline */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A132A14FCBF00F4976C /* SantanderHeadline-BoldIt.ttf */,
+				CDAF7A142A14FCBF00F4976C /* SantanderHeadline-Bold.ttf */,
+				CDAF7A152A14FCBF00F4976C /* SantanderHeadline-Regular.ttf */,
+				CDAF7A162A14FCBF00F4976C /* SantanderHeadline-It.ttf */,
+			);
+			path = SantanderHeadline;
+			sourceTree = "<group>";
+		};
+		CDAF7A172A14FCBF00F4976C /* SantanderText */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A182A14FCBF00F4976C /* SantanderText-BoldItalic.ttf */,
+				CDAF7A192A14FCBF00F4976C /* SantanderText-Italic.ttf */,
+				CDAF7A1A2A14FCBF00F4976C /* SantanderText-Light.ttf */,
+				CDAF7A1B2A14FCBF00F4976C /* SantanderText-Bold.ttf */,
+				CDAF7A1C2A14FCBF00F4976C /* SantanderText-LightItalic.ttf */,
+				CDAF7A1D2A14FCBF00F4976C /* SantanderText-Regular.ttf */,
+			);
+			path = SantanderText;
+			sourceTree = "<group>";
+		};
+		CDAF7A2F2A15137600F4976C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A382A154F7100F4976C /* StartScreen */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CDAF7A382A154F7100F4976C /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A342A1539A900F4976C /* DonationBanner.swift */,
+				CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		CDAF7A392A154F8300F4976C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A2D2A1512F100F4976C /* TabBarItem.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CDAF7A3A2A154F9B00F4976C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CDAF7A362A15432600F4976C /* PostItem.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDAF79F42A14E61400F4976C /* FundacjaSantanderDesign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDAF7A032A14E61500F4976C /* Build configuration list for PBXNativeTarget "FundacjaSantanderDesign" */;
+			buildPhases = (
+				CDAF79F12A14E61400F4976C /* Sources */,
+				CDAF79F22A14E61400F4976C /* Frameworks */,
+				CDAF79F32A14E61400F4976C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FundacjaSantanderDesign;
+			productName = FundacjaSantanderDesign;
+			productReference = CDAF79F52A14E61400F4976C /* FundacjaSantanderDesign.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDAF79ED2A14E61400F4976C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CDAF79F42A14E61400F4976C = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = CDAF79F02A14E61400F4976C /* Build configuration list for PBXProject "FundacjaSantanderDesign" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDAF79EC2A14E61400F4976C;
+			productRefGroup = CDAF79F62A14E61400F4976C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDAF79F42A14E61400F4976C /* FundacjaSantanderDesign */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDAF79F32A14E61400F4976C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDAF7A212A14FCBF00F4976C /* SantanderHeadline-It.ttf in Resources */,
+				CDAF7A1E2A14FCBF00F4976C /* SantanderHeadline-BoldIt.ttf in Resources */,
+				CDAF7A242A14FCBF00F4976C /* SantanderText-Light.ttf in Resources */,
+				CDAF7A002A14E61500F4976C /* Preview Assets.xcassets in Resources */,
+				CDAF7A262A14FCBF00F4976C /* SantanderText-LightItalic.ttf in Resources */,
+				CDAF7A272A14FCBF00F4976C /* SantanderText-Regular.ttf in Resources */,
+				CDAF7A1F2A14FCBF00F4976C /* SantanderHeadline-Bold.ttf in Resources */,
+				CDAF7A232A14FCBF00F4976C /* SantanderText-Italic.ttf in Resources */,
+				CDAF7A202A14FCBF00F4976C /* SantanderHeadline-Regular.ttf in Resources */,
+				CDAF7A222A14FCBF00F4976C /* SantanderText-BoldItalic.ttf in Resources */,
+				CDAF79FD2A14E61500F4976C /* Assets.xcassets in Resources */,
+				CDAF7A252A14FCBF00F4976C /* SantanderText-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDAF79F12A14E61400F4976C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDAF7A372A15432600F4976C /* PostItem.swift in Sources */,
+				CDAF7A0E2A14ED0F00F4976C /* ProjektyView.swift in Sources */,
+				CDAF7A082A14ECD700F4976C /* StartView.swift in Sources */,
+				CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */,
+				CDAF7A0C2A14ECFF00F4976C /* PomagajView.swift in Sources */,
+				CDAF7A0A2A14ECED00F4976C /* AktualnosciView.swift in Sources */,
+				CDAF7A352A1539A900F4976C /* DonationBanner.swift in Sources */,
+				CDAF7A102A14ED1D00F4976C /* FAQView.swift in Sources */,
+				CDAF79FB2A14E61400F4976C /* ContentView.swift in Sources */,
+				CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */,
+				CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CDAF7A012A14E61500F4976C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CDAF7A022A14E61500F4976C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDAF7A042A14E61500F4976C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NMXNJ3368;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FundacjaSantanderDesign/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDAF7A052A14E61500F4976C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
+				DEVELOPMENT_TEAM = 5NMXNJ3368;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FundacjaSantanderDesign/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDAF79F02A14E61400F4976C /* Build configuration list for PBXProject "FundacjaSantanderDesign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDAF7A012A14E61500F4976C /* Debug */,
+				CDAF7A022A14E61500F4976C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDAF7A032A14E61500F4976C /* Build configuration list for PBXNativeTarget "FundacjaSantanderDesign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDAF7A042A14E61500F4976C /* Debug */,
+				CDAF7A052A14E61500F4976C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDAF79ED2A14E61400F4976C /* Project object */;
+}
