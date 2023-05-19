@@ -45,7 +45,9 @@ struct ContentView: View {
                         .onTapGesture { selectedTab = 4 }
                 }
             }.frame(height: 50)
+             
         }
+        
     }
 }
 

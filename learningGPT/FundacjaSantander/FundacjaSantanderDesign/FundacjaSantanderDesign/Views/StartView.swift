@@ -9,7 +9,9 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
+        
         ScrollView(showsIndicators: false) {
+            StatusView(status: .idle)
             VStack{
                 WelcomeBanner()
                 Spacer()
@@ -22,6 +24,7 @@ struct StartView: View {
                             .padding(.bottom, 10)
                     }
                 }
+                ContactInfo()
             }
         }
     }

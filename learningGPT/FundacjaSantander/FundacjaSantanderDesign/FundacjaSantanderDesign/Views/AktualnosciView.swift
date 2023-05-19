@@ -9,7 +9,20 @@ import SwiftUI
 
 struct AktualnosciView: View {
     var body: some View {
-        Text("Aktualności")
+        ScrollView {
+            VStack{
+                Title(title: "Aktualności")
+
+                VStack {
+                    ForEach(0..<5) { item in
+                        NewsItem(imageName: "welcome", title: "News Title", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna. ", category: "Category")
+                            .padding(.bottom, 10)
+                    }
+                    PaginationButtons()
+                }
+                ContactInfo()
+            }
+        }
     }
 }
 

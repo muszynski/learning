@@ -9,12 +9,16 @@ import SwiftUI
 
 struct PomagajView: View {
     var body: some View {
-        VStack{
-            DonationBannerForm()
-            Spacer()
-                .frame(height: 40)
-            Blik()
-            Spacer()
+        ScrollView {
+            VStack {
+                DonationBannerForm()
+                    .padding(.bottom, 40) // dodaj padding zamiast Spacer
+                Blik()
+                DonationForm()
+                PaymentSymbol()
+                ContactInfo()
+            }
+            .padding(.bottom) // dodatkowy padding na dole, jeśli potrzebujesz
         }
     }
 }
@@ -24,3 +28,5 @@ struct PomagajView_Previews: PreviewProvider {
         PomagajView()
     }
 }
+
+
