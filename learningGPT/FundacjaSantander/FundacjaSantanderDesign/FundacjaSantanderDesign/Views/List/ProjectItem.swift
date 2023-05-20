@@ -6,22 +6,21 @@
 //
 
 import SwiftUI
+import CoreData
 
-struct PostItem: View {
-    let imageName: String
+struct ProjectItem: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    let imageData: Data?
     let title: String
     let content: String
-    let category: String
+    let categoryName : String
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
             HStack {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
+                ImageHolder(imageData: imageData)
                     .frame(width: 77, height: 160)
                     .clipped()
-
                 VStack(alignment: .leading) {
                     Text(title)
                         .bold()
@@ -54,7 +53,7 @@ struct PostItem: View {
             .shadow(color: Color.black.opacity(0.12), radius: 8, x: 0, y: 5)
 
 
-            Text(category.uppercased())
+            Text(categoryName)
                 .font(.custom("SantanderText-Bold", size: 14))
                 .padding(.horizontal, 10)
                 .padding(.vertical, 3)
@@ -64,14 +63,19 @@ struct PostItem: View {
                 .padding(10)
                 .offset(y: -20)
         }
+        
     }
 }
 
-struct PostItem_Previews: PreviewProvider {
+
+struct ProjectItem_Previews: PreviewProvider {
     static var previews: some View {
-        PostItem(imageName: "welcome", title: "News Title", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna. ", category: "Category")
+        ProjectItem(
+            imageData: UIImage(named: "welcome")?.pngData(),
+            title: "Example Title",
+            content: "This is some example content for the preview. It's only a few lines long, but it should be enough to give you an idea of how the text will look.", categoryName: "Jakaś kategoria 2"
+        )
+        .previewLayout(.sizeThatFits)
     }
 }
-
-
 

@@ -11,10 +11,19 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
+    // Dodaj tę linię
+    static let preview = PersistenceController(inMemory: true)
+
     let container: NSPersistentContainer
 
-    init() {
+    init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Model")
+        
+        // Jeśli używamy preview, ustawiamy store na in-memory
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

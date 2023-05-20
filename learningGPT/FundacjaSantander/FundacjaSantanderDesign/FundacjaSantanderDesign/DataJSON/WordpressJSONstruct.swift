@@ -20,7 +20,7 @@ struct WordpressPost: Decodable{
     let excerpt: Excerpt
     let categories: [Int]
     let tags: [Int]
-    let thumbnails: String
+    let thumbnails: String?
 }
 
 struct TitlePost: Decodable {

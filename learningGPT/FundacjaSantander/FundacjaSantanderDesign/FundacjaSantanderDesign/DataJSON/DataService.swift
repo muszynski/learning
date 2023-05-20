@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class DataService {
     func fetchPosts(completion: @escaping ([WordpressPost]?) -> Void) {
@@ -61,6 +62,23 @@ class DataService {
                 }
             }
         }
+    // funkcja tworzaca z kategori słownik
     
+    func loadCategoriesFromCoreData() -> [Int16: String] {
+        let context = PersistenceController.shared.container.viewContext
+        let fetchRequest: NSFetchRequest<Categories> = Categories.fetchRequest()
+
+        do {
+            let categories = try context.fetch(fetchRequest)
+            var categoryMap = [Int16: String]()
+            for category in categories {
+                categoryMap[category.id] = category.name
+            }
+            return categoryMap
+        } catch let error as NSError {
+            print("Could not fetch categories. \(error), \(error.userInfo)")
+            return [:]
+        }
+    }
 }
 

@@ -26,6 +26,7 @@ func savePostsToCoreData(posts: [WordpressPost]) {
                 newPost = Post(context: context)
                 newPost.id = Int16(post.id)
             }
+            newPost.postId = UUID()
             newPost.date = customISO8601DateFormatter().date(from: post.date)
             newPost.modified = customISO8601DateFormatter().date(from: post.modified)
             newPost.slug = post.slug
@@ -39,7 +40,23 @@ func savePostsToCoreData(posts: [WordpressPost]) {
             newPost.tags = post.tags as NSArray
             newPost.thumbnails = post.thumbnails
 
-            try context.save()
+            // Fetch and save thumbnail
+            if let thumbnailUrl = post.thumbnails {
+                fetchAndSaveThumbnail(thumbnails: thumbnailUrl, context: context) { (thumbnailData, error) in
+                    guard let thumbnailData = thumbnailData else {
+                        print("Failed to fetch thumbnail:", error ?? "Unknown error")
+                        return
+                    }
+
+                    newPost.thumbnailsImage = thumbnailData
+                    
+                    do {
+                        try context.save()
+                    } catch {
+                        print("Failed to save context:", error)
+                    }
+                }
+            }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -63,6 +80,7 @@ func saveCategoriesToCoreData(categories: [Category]) {
             } else {
                 // The category does not exist, create a new one
                 let newCategory = Categories(context: context)
+                newCategory.catId = UUID()
                 newCategory.id = Int16(category.id)
                 newCategory.name = category.name
                 newCategory.slug = category.slug

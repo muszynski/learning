@@ -16,6 +16,11 @@
 		CD63732B2A1786EF005476EB /* SaveCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63732A2A1786EF005476EB /* SaveCoreData.swift */; };
 		CD63732D2A17978A005476EB /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63732C2A17978A005476EB /* TestJSON.swift */; };
 		CD63732F2A17992D005476EB /* TestCOREDATA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63732E2A17992D005476EB /* TestCOREDATA.swift */; };
+		CD6373312A17A20B005476EB /* FetchAndSaveThumbnails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373302A17A20B005476EB /* FetchAndSaveThumbnails.swift */; };
+		CD6373332A17A561005476EB /* CleanHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373322A17A561005476EB /* CleanHTML.swift */; };
+		CD6373352A17A59E005476EB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373342A17A59E005476EB /* SafariView.swift */; };
+		CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373362A17AF9D005476EB /* ImageHolder.swift */; };
+		CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373382A17B938005476EB /* GetCategoryName.swift */; };
 		CD80C5D82A15E63700631827 /* DonationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD80C5D72A15E63700631827 /* DonationForm.swift */; };
 		CD9ED3B02A161D6D008F23D0 /* PaymentSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */; };
 		CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B22A162BD4008F23D0 /* ContactInfo.swift */; };
@@ -45,7 +50,7 @@
 		CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A2D2A1512F100F4976C /* TabBarItem.swift */; };
 		CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */; };
 		CDAF7A352A1539A900F4976C /* DonationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A342A1539A900F4976C /* DonationBanner.swift */; };
-		CDAF7A372A15432600F4976C /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A362A15432600F4976C /* PostItem.swift */; };
+		CDAF7A372A15432600F4976C /* ProjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A362A15432600F4976C /* ProjectItem.swift */; };
 		CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */; };
 		CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3E2A15595A00F4976C /* Blik.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +65,11 @@
 		CD63732A2A1786EF005476EB /* SaveCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreData.swift; sourceTree = "<group>"; };
 		CD63732C2A17978A005476EB /* TestJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
 		CD63732E2A17992D005476EB /* TestCOREDATA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCOREDATA.swift; sourceTree = "<group>"; };
+		CD6373302A17A20B005476EB /* FetchAndSaveThumbnails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAndSaveThumbnails.swift; sourceTree = "<group>"; };
+		CD6373322A17A561005476EB /* CleanHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanHTML.swift; sourceTree = "<group>"; };
+		CD6373342A17A59E005476EB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		CD6373362A17AF9D005476EB /* ImageHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHolder.swift; sourceTree = "<group>"; };
+		CD6373382A17B938005476EB /* GetCategoryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryName.swift; sourceTree = "<group>"; };
 		CD80C5D72A15E63700631827 /* DonationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForm.swift; sourceTree = "<group>"; };
 		CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSymbol.swift; sourceTree = "<group>"; };
 		CD9ED3B22A162BD4008F23D0 /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
@@ -91,7 +101,7 @@
 		CDAF7A2D2A1512F100F4976C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CDAF7A302A151FB900F4976C /* WelcomeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBanner.swift; sourceTree = "<group>"; };
 		CDAF7A342A1539A900F4976C /* DonationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBanner.swift; sourceTree = "<group>"; };
-		CDAF7A362A15432600F4976C /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		CDAF7A362A15432600F4976C /* ProjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItem.swift; sourceTree = "<group>"; };
 		CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBannerForm.swift; sourceTree = "<group>"; };
 		CDAF7A3E2A15595A00F4976C /* Blik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blik.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +124,7 @@
 				CD6373212A178324005476EB /* DataService.swift */,
 				CD63732A2A1786EF005476EB /* SaveCoreData.swift */,
 				CD63732C2A17978A005476EB /* TestJSON.swift */,
+				CD6373382A17B938005476EB /* GetCategoryName.swift */,
 			);
 			path = DataJSON;
 			sourceTree = "<group>";
@@ -132,6 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				CD6373262A178500005476EB /* DateConverter.swift */,
+				CD6373302A17A20B005476EB /* FetchAndSaveThumbnails.swift */,
+				CD6373322A17A561005476EB /* CleanHTML.swift */,
+				CD6373342A17A59E005476EB /* SafariView.swift */,
+				CD6373362A17AF9D005476EB /* ImageHolder.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -265,7 +280,7 @@
 		CDAF7A3A2A154F9B00F4976C /* List */ = {
 			isa = PBXGroup;
 			children = (
-				CDAF7A362A15432600F4976C /* PostItem.swift */,
+				CDAF7A362A15432600F4976C /* ProjectItem.swift */,
 				CD9ED3B62A1634ED008F23D0 /* NewsItem.swift */,
 				CD9ED3B82A163908008F23D0 /* ToggleView.swift */,
 				CD9ED3BA2A1644C3008F23D0 /* PaginationButton.swift */,
@@ -365,8 +380,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD6373272A178500005476EB /* DateConverter.swift in Sources */,
-				CDAF7A372A15432600F4976C /* PostItem.swift in Sources */,
+				CDAF7A372A15432600F4976C /* ProjectItem.swift in Sources */,
 				CD9ED3B52A163274008F23D0 /* Title.swift in Sources */,
+				CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */,
 				CDAF7A0E2A14ED0F00F4976C /* ProjektyView.swift in Sources */,
 				CD9ED3BB2A1644C3008F23D0 /* PaginationButton.swift in Sources */,
 				CD6373292A178561005476EB /* PersistanceController.swift in Sources */,
@@ -376,6 +392,8 @@
 				CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */,
 				CDAF7A0C2A14ECFF00F4976C /* PomagajView.swift in Sources */,
 				CD9ED3B72A1634ED008F23D0 /* NewsItem.swift in Sources */,
+				CD6373332A17A561005476EB /* CleanHTML.swift in Sources */,
+				CD6373312A17A20B005476EB /* FetchAndSaveThumbnails.swift in Sources */,
 				CD6373202A17751C005476EB /* StatusView.swift in Sources */,
 				CD6373162A16B157005476EB /* WordpressJSONstruct.swift in Sources */,
 				CD63732B2A1786EF005476EB /* SaveCoreData.swift in Sources */,
@@ -390,6 +408,8 @@
 				CDAF79FB2A14E61400F4976C /* Tabs.swift in Sources */,
 				CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */,
 				CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */,
+				CD6373352A17A59E005476EB /* SafariView.swift in Sources */,
+				CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */,
 				CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */,
 				CD80C5D82A15E63700631827 /* DonationForm.swift in Sources */,
 				CD9ED3B92A163908008F23D0 /* ToggleView.swift in Sources */,

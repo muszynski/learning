@@ -6,29 +6,62 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProjektyView: View {
+    @FetchRequest(
+        entity: Post.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Post.date, ascending: false)],
+        predicate: NSPredicate(format: "status == %@", "publish")
+    ) var posts: FetchedResults<Post>
+    
+    @State private var categoryMap: [Int16: String] = [:]
+    
     var body: some View {
-        ScrollView {
+
             VStack{
                 Title(title: "Programy grantowe i projekty")
-
-                VStack {
-                    ForEach(0..<5) { item in
-                        PostItem(imageName: "welcome", title: "News Title", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna. ", category: "Category")
-                            .padding(.bottom, 10)
+                
+                
+                //
+                
+                List {
+                    ForEach(posts, id: \.self) { post in
+                        VStack(alignment: .leading) {
+                            ProjectItem(
+                                imageData: post.thumbnailsImage,
+                                title: post.title ?? "Title",
+                                content: post.content ?? "Content",
+                                categoryName: getCategoryNames(from: post.categories)
+                            )
+                        }
                     }
                 }
-                ContactInfo()
+
+                .onAppear {
+                    categoryMap = DataService().loadCategoriesFromCoreData()
+                }
+            }
+            
+            func getCategoryNames(from categories: NSArray?) -> [String] {
+                guard let categoryIds = categories as? [Int16] else { return [] }
+                return categoryIds.compactMap { categoryId in
+                    categoryMap[categoryId]
+                }
+                
+                //
             }
         }
     }
-}
+
 
 struct ProjektyView_Previews: PreviewProvider {
     static var previews: some View {
         ProjektyView()
-        
     }
 }
+
+
+
+
 
