@@ -61,7 +61,7 @@ struct TestCOREDATA_Previews: PreviewProvider {
         mockPost.thumbnails = "Sample Link"
         mockPost.categories = [1, 2] as NSArray
         
-        let mockCategoryMap: [Int16: String] = [1: "Category 1", 2: "Category 2"]
+        // let mockCategoryMap: [Int16: String] = [1: "Category 1", 2: "Category 2"]
         
         return TestCOREDATA()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

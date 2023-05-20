@@ -20,4 +20,11 @@ func getCategoryName(id: NSManagedObjectID, from viewContext: NSManagedObjectCon
     return nil
 }
 
+var categoryMap: [Int16: String] = [:]
 
+func getCategoryNames(from categories: NSObject?) -> [String] {
+    guard let categoryIds = categories as? [Int16] else { return [] }
+    return categoryIds.compactMap { categoryId in
+        categoryMap[categoryId]
+    }
+}

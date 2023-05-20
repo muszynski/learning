@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @State private var selectedTab = 0
     
     var body: some View {
@@ -45,7 +45,12 @@ struct ContentView: View {
                         .onTapGesture { selectedTab = 4 }
                 }
             }.frame(height: 50)
-             
+            
+        }
+        .onAppear {
+            DataService().fetchAndSavePosts()
+            DataService().fetchAndSaveCategories()
+            categoryMap = DataService().loadCategoriesFromCoreData()
         }
         
     }
@@ -53,6 +58,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

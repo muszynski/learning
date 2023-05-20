@@ -14,6 +14,7 @@ struct ProjectItem: View {
     let title: String
     let content: String
     let categoryName : String
+    let link : String
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -22,19 +23,20 @@ struct ProjectItem: View {
                     .frame(width: 77, height: 160)
                     .clipped()
                 VStack(alignment: .leading) {
-                    Text(title)
+                    Text(cleanHTML(title))
                         .bold()
                         .font(.custom("SantanderText-Bold", size: 14))
                         .padding(.bottom, 5.0)
-                        .lineSpacing(16)
+                        .lineSpacing(0)
                         .foregroundColor(Color("fontGray"))
+                        .lineLimit(2)
 
-                    Text(content)
+                    Text(cleanHTML(content))
                         .font(.custom("SantanderText-Normal", size: 12))
                         .lineSpacing(4)
                         .foregroundColor(Color("fontGray"))
                         .truncationMode(.tail)
-                        .lineLimit(5)
+                        .lineLimit(4)
 
                 }
                 .padding(.leading)
@@ -63,7 +65,6 @@ struct ProjectItem: View {
                 .padding(10)
                 .offset(y: -20)
         }
-        
     }
 }
 
@@ -73,7 +74,7 @@ struct ProjectItem_Previews: PreviewProvider {
         ProjectItem(
             imageData: UIImage(named: "welcome")?.pngData(),
             title: "Example Title",
-            content: "This is some example content for the preview. It's only a few lines long, but it should be enough to give you an idea of how the text will look.", categoryName: "Jakaś kategoria 2"
+            content: "This is some example content for the preview. It's only a few lines long, but it should be enough to give you an idea of how the text will look.", categoryName: "Jakaś kategoria 2", link: "https://fundacja.santander.pl"
         )
         .previewLayout(.sizeThatFits)
     }

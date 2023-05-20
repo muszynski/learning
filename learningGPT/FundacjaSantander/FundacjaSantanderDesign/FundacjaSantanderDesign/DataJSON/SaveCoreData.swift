@@ -12,7 +12,7 @@ func savePostsToCoreData(posts: [WordpressPost]) {
 
     for post in posts {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", NSNumber(value: post.id))
+        fetchRequest.predicate = NSPredicate(format: "idPost == %@", NSNumber(value: post.id))
 
         do {
             let fetchedPosts = try context.fetch(fetchRequest)
@@ -24,9 +24,8 @@ func savePostsToCoreData(posts: [WordpressPost]) {
                 newPost = existingPost
             } else {
                 newPost = Post(context: context)
-                newPost.id = Int16(post.id)
+                newPost.idPost = Int16(post.id)
             }
-            newPost.postId = UUID()
             newPost.date = customISO8601DateFormatter().date(from: post.date)
             newPost.modified = customISO8601DateFormatter().date(from: post.modified)
             newPost.slug = post.slug
@@ -36,8 +35,8 @@ func savePostsToCoreData(posts: [WordpressPost]) {
             newPost.title = post.title.rendered
             newPost.content = post.content.rendered
             newPost.excerpt = post.excerpt.rendered
-            newPost.categories = post.categories as NSArray
-            newPost.tags = post.tags as NSArray
+            newPost.categories = post.categories as NSArray? ?? []
+            newPost.tags = post.tags as NSArray? ?? []
             newPost.thumbnails = post.thumbnails
 
             // Fetch and save thumbnail
@@ -49,19 +48,22 @@ func savePostsToCoreData(posts: [WordpressPost]) {
                     }
 
                     newPost.thumbnailsImage = thumbnailData
-                    
-                    do {
-                        try context.save()
-                    } catch {
-                        print("Failed to save context:", error)
-                    }
                 }
             }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
+    
+    context.performAndWait {
+        do {
+            try context.save()
+        } catch {
+            print("Failed to save context:", error)
+        }
+    }
 }
+
 
 
 func saveCategoriesToCoreData(categories: [Category]) {
@@ -69,7 +71,7 @@ func saveCategoriesToCoreData(categories: [Category]) {
 
     for category in categories {
         let fetchRequest: NSFetchRequest<Categories> = Categories.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", NSNumber(value: category.id))
+        fetchRequest.predicate = NSPredicate(format: "idCategory == %@", NSNumber(value: category.id))
 
         do {
             let fetchedCategories = try context.fetch(fetchRequest)
@@ -80,8 +82,8 @@ func saveCategoriesToCoreData(categories: [Category]) {
             } else {
                 // The category does not exist, create a new one
                 let newCategory = Categories(context: context)
-                newCategory.catId = UUID()
-                newCategory.id = Int16(category.id)
+//                newCategory.catId = UUID()
+                newCategory.idCategory = Int16(category.id)
                 newCategory.name = category.name
                 newCategory.slug = category.slug
             }

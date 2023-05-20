@@ -27,12 +27,14 @@ struct ImageHolder: View {
                 Image(systemName: "photo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .frame(width: 32, height: 32) // Set desired size
+                    .foregroundColor(Color("santanderRed")) // Set desired color
             }
         }
         .onAppear {
             isLoading = false
         }
-
+        
     }
 }
 

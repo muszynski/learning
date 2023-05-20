@@ -12,7 +12,7 @@ struct FundacjaSantanderDesignApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            TestCOREDATA()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
