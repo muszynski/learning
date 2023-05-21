@@ -21,6 +21,7 @@
 		CD6373352A17A59E005476EB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373342A17A59E005476EB /* SafariView.swift */; };
 		CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373362A17AF9D005476EB /* ImageHolder.swift */; };
 		CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373382A17B938005476EB /* GetCategoryName.swift */; };
+		CD6F6F5D2A1A714500DD8D47 /* SimpleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F6F5C2A1A714500DD8D47 /* SimpleTest.swift */; };
 		CD7DE5512A18BC22007DD036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DE5502A18BC22007DD036 /* GlobalVariable.swift */; };
 		CD80C5D82A15E63700631827 /* DonationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD80C5D72A15E63700631827 /* DonationForm.swift */; };
 		CD831AFF2A18D61E0032343E /* ProjektyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD831AFE2A18D61E0032343E /* ProjektyView.swift */; };
@@ -55,6 +56,7 @@
 		CDAF7A372A15432600F4976C /* ProjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A362A15432600F4976C /* ProjectItem.swift */; };
 		CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */; };
 		CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3E2A15595A00F4976C /* Blik.swift */; };
+		CDCA95752A1953790003D313 /* scratch.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CDCA95742A1953790003D313 /* scratch.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,7 @@
 		CD6373342A17A59E005476EB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CD6373362A17AF9D005476EB /* ImageHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHolder.swift; sourceTree = "<group>"; };
 		CD6373382A17B938005476EB /* GetCategoryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryName.swift; sourceTree = "<group>"; };
+		CD6F6F5C2A1A714500DD8D47 /* SimpleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTest.swift; sourceTree = "<group>"; };
 		CD7DE5502A18BC22007DD036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		CD80C5D72A15E63700631827 /* DonationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForm.swift; sourceTree = "<group>"; };
 		CD831AFE2A18D61E0032343E /* ProjektyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjektyView.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		CDAF7A362A15432600F4976C /* ProjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItem.swift; sourceTree = "<group>"; };
 		CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBannerForm.swift; sourceTree = "<group>"; };
 		CDAF7A3E2A15595A00F4976C /* Blik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blik.swift; sourceTree = "<group>"; };
+		CDCA95742A1953790003D313 /* scratch.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = scratch.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				CD63732A2A1786EF005476EB /* SaveCoreData.swift */,
 				CD63732C2A17978A005476EB /* TestJSON.swift */,
 				CD6373382A17B938005476EB /* GetCategoryName.swift */,
+				CD6F6F5C2A1A714500DD8D47 /* SimpleTest.swift */,
 			);
 			path = DataJSON;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 		CDAF79EC2A14E61400F4976C = {
 			isa = PBXGroup;
 			children = (
+				CDCA95742A1953790003D313 /* scratch.rtf */,
 				CDAF79F72A14E61400F4976C /* FundacjaSantanderDesign */,
 				CDAF79F62A14E61400F4976C /* Products */,
 			);
@@ -363,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCA95752A1953790003D313 /* scratch.rtf in Resources */,
 				CDAF7A212A14FCBF00F4976C /* SantanderHeadline-It.ttf in Resources */,
 				CDAF7A1E2A14FCBF00F4976C /* SantanderHeadline-BoldIt.ttf in Resources */,
 				CDAF7A242A14FCBF00F4976C /* SantanderText-Light.ttf in Resources */,
@@ -394,6 +401,7 @@
 				CD6373292A178561005476EB /* PersistanceController.swift in Sources */,
 				CD63732F2A17992D005476EB /* TestCOREDATA.swift in Sources */,
 				CDAF7A082A14ECD700F4976C /* StartView.swift in Sources */,
+				CD6F6F5D2A1A714500DD8D47 /* SimpleTest.swift in Sources */,
 				CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */,
 				CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */,
 				CDAF7A0C2A14ECFF00F4976C /* PomagajView.swift in Sources */,
@@ -547,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -566,7 +574,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -584,7 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -603,7 +611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

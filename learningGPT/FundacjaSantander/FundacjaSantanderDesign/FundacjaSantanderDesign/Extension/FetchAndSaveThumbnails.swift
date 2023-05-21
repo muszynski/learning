@@ -26,7 +26,7 @@ func fetchAndSaveThumbnail(thumbnails: String, context: NSManagedObjectContext, 
             return
         }
 
-        let targetWidth: CGFloat = 300
+        let targetWidth: CGFloat = 100
         let aspectRatio = image.size.height / image.size.width
         let targetSize = CGSize(width: targetWidth, height: targetWidth * aspectRatio)
 

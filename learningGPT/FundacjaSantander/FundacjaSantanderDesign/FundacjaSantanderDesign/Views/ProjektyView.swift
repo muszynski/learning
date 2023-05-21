@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ProjektyView: View {
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                Title(title: "Programy grantowe i projekty")
-                    .padding(.bottom, 20)
-                ProjectList()
-                    .frame(height: 600)
-                    .padding(.bottom, 20)
-                ContactInfo()
-            }
+        
+        VStack {
+            Title(title: "Programy grantowe i projekty")
+                .padding(.bottom, 20)
+                            ProjectList()
+                                .frame(height: 600)
+                                .padding(.bottom, 20)
+            //                ContactInfo()
         }
     }
 }

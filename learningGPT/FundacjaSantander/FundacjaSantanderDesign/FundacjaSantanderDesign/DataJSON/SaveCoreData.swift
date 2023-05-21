@@ -18,8 +18,6 @@ func savePostsToCoreData(posts: [WordpressPost]) {
             let fetchedPosts = try context.fetch(fetchRequest)
 
             var newPost: Post!
-            // Jeśli post o danym ID już istnieje, aktualizujemy go.
-            // Jeśli nie, tworzymy nowy.
             if let existingPost = fetchedPosts.first {
                 newPost = existingPost
             } else {
@@ -37,10 +35,10 @@ func savePostsToCoreData(posts: [WordpressPost]) {
             newPost.excerpt = post.excerpt.rendered
             newPost.categories = post.categories as NSArray? ?? []
             newPost.tags = post.tags as NSArray? ?? []
-            newPost.thumbnails = post.thumbnails
+            newPost.thumbnails = post.thumbnails.stringValue  // Zmień thumbnails na stringValue
 
             // Fetch and save thumbnail
-            if let thumbnailUrl = post.thumbnails {
+            if let thumbnailUrl = post.thumbnails.stringValue {  // Zmień thumbnails na stringValue
                 fetchAndSaveThumbnail(thumbnails: thumbnailUrl, context: context) { (thumbnailData, error) in
                     guard let thumbnailData = thumbnailData else {
                         print("Failed to fetch thumbnail:", error ?? "Unknown error")
@@ -63,6 +61,7 @@ func savePostsToCoreData(posts: [WordpressPost]) {
         }
     }
 }
+
 
 
 

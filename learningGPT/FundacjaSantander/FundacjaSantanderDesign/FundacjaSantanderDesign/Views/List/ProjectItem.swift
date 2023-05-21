@@ -15,6 +15,7 @@ struct ProjectItem: View {
     let content: String
     let categoryName : String
     let link : String
+    let datePublication : String
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -26,7 +27,7 @@ struct ProjectItem: View {
                     Text(cleanHTML(title))
                         .bold()
                         .font(.custom("SantanderText-Bold", size: 14))
-                        .padding(.bottom, 5.0)
+                        .padding(.bottom, 3.0)
                         .lineSpacing(0)
                         .foregroundColor(Color("fontGray"))
                         .lineLimit(2)
@@ -36,7 +37,7 @@ struct ProjectItem: View {
                         .lineSpacing(4)
                         .foregroundColor(Color("fontGray"))
                         .truncationMode(.tail)
-                        .lineLimit(4)
+                        .lineLimit(3)
 
                 }
                 .padding(.leading)
@@ -63,7 +64,17 @@ struct ProjectItem: View {
                 .foregroundColor(Color("fontDark"))
                 .cornerRadius(4)
                 .padding(10)
-                .offset(y: -20)
+                .offset(y: -15)
+            
+            Text(datePublication)
+                .font(.custom("SantanderText-Normal", size: 12))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 3)
+//                .background(Color("darkBlue"))
+                .foregroundColor(Color("fontDark"))
+                .cornerRadius(4)
+                .padding(10)
+                .offset(y: 120)
         }
     }
 }
@@ -74,7 +85,7 @@ struct ProjectItem_Previews: PreviewProvider {
         ProjectItem(
             imageData: UIImage(named: "welcome")?.pngData(),
             title: "Example Title",
-            content: "This is some example content for the preview. It's only a few lines long, but it should be enough to give you an idea of how the text will look.", categoryName: "Jakaś kategoria 2", link: "https://fundacja.santander.pl"
+            content: "This is some example content for the preview. It's only a few lines long, but it should be enough to give you an idea of how the text will look.", categoryName: "Jakaś kategoria 2", link: "https://fundacja.santander.pl", datePublication: "03.03.2023"
         )
         .previewLayout(.sizeThatFits)
     }

@@ -19,13 +19,18 @@ struct PostsView: View {
     }
     
     func loadPosts() {
-        dataService.fetchPosts { fetchedPosts in
-            guard let fetchedPosts = fetchedPosts else { return }
+        dataService.fetchPosts { fetchedPosts, error in
+            guard let fetchedPosts = fetchedPosts else {
+                // Możesz tutaj obsłużyć błąd, jeśli chcesz
+                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
             DispatchQueue.main.async {
                 self.posts = fetchedPosts
             }
         }
     }
+
 }
 
 struct CategoriesView: View {
@@ -40,13 +45,18 @@ struct CategoriesView: View {
     }
 
     func loadCategories() {
-        dataService.fetchCategories { fetchedCategories in
-            guard let fetchedCategories = fetchedCategories else { return }
+        dataService.fetchCategories { fetchedCategories, error in
+            guard let fetchedCategories = fetchedCategories else {
+                // Możesz tutaj obsłużyć błąd, jeśli chcesz
+                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
             DispatchQueue.main.async {
                 self.categories = fetchedCategories
             }
         }
     }
+
 }
 
 struct PostsView_Previews: PreviewProvider {

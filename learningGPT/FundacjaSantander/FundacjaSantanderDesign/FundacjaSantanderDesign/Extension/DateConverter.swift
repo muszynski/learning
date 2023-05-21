@@ -22,3 +22,9 @@ func customISO8601DateFormatter() -> DateFormatter {
     dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
     return dateFormatter
 }
+
+func formattedDateDayMontYear(from date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd.MM.yyyy"
+    return formatter.string(from: date)
+}

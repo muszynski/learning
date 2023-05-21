@@ -20,7 +20,7 @@ struct WordpressPost: Decodable{
     let excerpt: Excerpt
     let categories: [Int]
     let tags: [Int]
-    let thumbnails: String?
+    let thumbnails: Thumbnail
 }
 
 struct TitlePost: Decodable {
@@ -39,4 +39,42 @@ struct Category: Decodable {
     let id: Int
     let name: String
     let slug: String
+}
+
+enum Thumbnail: Decodable {
+    case string(String)
+    case int(Int)
+    case none
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        if let x = try? container.decode(Int.self) {
+            self = .string(String(x))  // Konwertuj wartość Int na String
+            return
+        }
+        self = .none
+    }
+    
+    var stringValue: String? {
+        switch self {
+        case .string(let value):
+            return value
+        default:
+            return nil
+        }
+    }
+}
+// obsluga bledow z Wordpress-a
+struct APIErrorResponse: Decodable {
+    let code: String
+    let message: String
+    let data: ErrorResponseData
+}
+
+struct ErrorResponseData: Decodable {
+    let status: Int
 }

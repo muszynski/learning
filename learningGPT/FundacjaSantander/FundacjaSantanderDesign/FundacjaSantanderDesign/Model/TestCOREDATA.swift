@@ -17,41 +17,53 @@ struct TestCOREDATA: View {
     private var posts: FetchedResults<Post>
     
     @State private var categoryMap: [Int16: String] = [:]
+    @StateObject private var dataService = DataService()
 
     var body: some View {
-        List {
-            ForEach(posts) { post in
-                VStack(alignment: .leading) {
-                    Text(post.title ?? "No title")
-                    Text(post.excerpt ?? "No excerpt")
-                    Text(post.thumbnails ?? "No link")
-                    ImageHolder(imageData: post.thumbnailsImage)
-                    
-                    // Displaying the categories of each post
-                    if let categories = post.categories as? [Int16] {
-                        ForEach(categories, id: \.self) { categoryId in
-                            if let categoryName = categoryMap[categoryId] {
-                                Text(categoryName)
+        VStack {
+            List {
+                ForEach(posts.indices, id: \.self) { index in
+                    VStack(alignment: .leading) {
+                        Text("\(index + 1). \(posts[index].title ?? "No title")")
+                        Text(posts[index].excerpt ?? "No excerpt")
+                        
+                        // Displaying the categories of each post
+                        if let categories = posts[index].categories as? [Int16] {
+                            ForEach(categories, id: \.self) { categoryId in
+                                if let categoryName = categoryMap[categoryId] {
+                                    Text(categoryName)
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            // Displaying the contents of categoryMap
-            ForEach(Array(categoryMap.keys), id: \.self) { key in
-                if let value = categoryMap[key] {
-                    Text("\(key): \(value)")
+                // Displaying the contents of categoryMap
+                ForEach(Array(categoryMap.keys), id: \.self) { key in
+                    if let value = categoryMap[key] {
+                        Text("\(key): \(value)")
+                    }
                 }
             }
+            
+            Button(action: {
+                dataService.fetchMorePosts() { _, _ in
+                    // Update categoryMap whenever we fetch more posts
+                    categoryMap = dataService.loadCategoriesFromCoreData()
+                }   
+            }) {
+                Text("Pobierz więcej postów")
+            }
+            .disabled(dataService.isLoading || !dataService.hasMorePages)
         }
         .onAppear {
-            DataService().fetchAndSavePosts()
-            DataService().fetchAndSaveCategories()
-            categoryMap = DataService().loadCategoriesFromCoreData()
+            dataService.fetchAndSavePosts()
+            dataService.fetchAndSaveCategories()
+            categoryMap = dataService.loadCategoriesFromCoreData()
         }
     }
 }
+
 
 struct TestCOREDATA_Previews: PreviewProvider {
     static var previews: some View {

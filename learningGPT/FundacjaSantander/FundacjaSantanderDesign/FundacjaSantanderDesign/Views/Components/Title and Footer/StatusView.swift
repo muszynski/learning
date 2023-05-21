@@ -12,6 +12,10 @@ enum Status {
     case loading
     case upToDate
     case idle
+    case serverUnavailable
+    case serverError
+    case timeout
+    case incorrectData
 }
 
 struct StatusView: View {
@@ -42,6 +46,26 @@ struct StatusView: View {
                         .font(.custom("SantanderText-Normal", size: 12))
                 case .idle:
                     EmptyView()
+                case .serverUnavailable:
+                    Image(systemName: "exclamationmark.triangle.fill") // Zastąp odpowiednią ikoną
+                        .foregroundColor(Color("santanderRed"))
+                    Text("Serwer jest niedostępny")
+                        .font(.custom("SantanderText-Normal", size: 12))
+                case .serverError:
+                    Image(systemName: "exclamationmark.octagon.fill") // Zastąp odpowiednią ikoną
+                        .foregroundColor(Color("santanderRed"))
+                    Text("Wystąpił błąd serwera")
+                        .font(.custom("SantanderText-Normal", size: 12))
+                case .timeout:
+                    Image(systemName: "hourglass") // Zastąp odpowiednią ikoną
+                        .foregroundColor(Color("santanderRed"))
+                    Text("Żądanie przekroczyło limit czasu")
+                        .font(.custom("SantanderText-Normal", size: 12))
+                case .incorrectData:
+                    Image(systemName: "exclamationmark.square.fill") // Zastąp odpowiednią ikoną
+                        .foregroundColor(Color("santanderRed"))
+                    Text("Dane są niewłaściwe lub niekompletne")
+                        .font(.custom("SantanderText-Normal", size: 12))
                 }
             }
             .foregroundColor(.primary)
@@ -63,7 +87,7 @@ struct StatusView: View {
 
 struct StatusView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusView(status: .loading)
+        StatusView(status: .incorrectData)
     }
 }
 
