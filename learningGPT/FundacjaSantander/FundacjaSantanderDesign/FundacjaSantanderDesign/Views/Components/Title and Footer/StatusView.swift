@@ -16,6 +16,7 @@ enum Status {
     case serverError
     case timeout
     case incorrectData
+    case noMoreData
 }
 
 struct StatusView: View {
@@ -65,6 +66,11 @@ struct StatusView: View {
                     Image(systemName: "exclamationmark.square.fill") // Zastąp odpowiednią ikoną
                         .foregroundColor(Color("santanderRed"))
                     Text("Dane są niewłaściwe lub niekompletne")
+                        .font(.custom("SantanderText-Normal", size: 12))
+                case .noMoreData:
+                    Image(systemName: "checkmark.icloud.fill") // Zastąp odpowiednią ikoną
+                        .foregroundColor(Color("santanderRed"))
+                    Text("Nie ma więcej wiadomości")
                         .font(.custom("SantanderText-Normal", size: 12))
                 }
             }

@@ -13,5 +13,6 @@ enum NetworkError: Error {
     case savingError
     case urlError
     case incorrectData
+    case serverError
     // Możesz dodać inne błędy związane z siecią
 }
