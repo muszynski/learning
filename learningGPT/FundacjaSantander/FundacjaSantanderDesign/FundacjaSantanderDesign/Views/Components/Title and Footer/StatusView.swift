@@ -70,8 +70,8 @@ struct StatusView: View {
             }
             .foregroundColor(.primary)
             .padding(7)
-            .background(Color.secondary.opacity(0.1))
-            .cornerRadius(8)
+//            .background(Color.secondary.opacity(0.1))
+//            .cornerRadius(8)
             .frame(maxWidth: .infinity, alignment: .center)
             .padding([.leading, .trailing], 20)
             .opacity(isVisible ? 1 : 0)

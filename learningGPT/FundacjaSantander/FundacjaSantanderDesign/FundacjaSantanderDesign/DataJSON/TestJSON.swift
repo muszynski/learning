@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostsView: View {
     @State private var posts: [WordpressPost] = []
-    private var dataService = DataService()
+    @StateObject private var postService = PostService()
     
     var body: some View {
         List(posts, id: \.id) { post in
@@ -19,23 +19,26 @@ struct PostsView: View {
     }
     
     func loadPosts() {
-        dataService.fetchPosts { fetchedPosts, error in
-            guard let fetchedPosts = fetchedPosts else {
-                // Możesz tutaj obsłużyć błąd, jeśli chcesz
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            DispatchQueue.main.async {
-                self.posts = fetchedPosts
-            }
-        }
+        let cancellable = postService.fetchPosts()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                case .finished:
+                    break
+                }
+            }, receiveValue: { fetchedPosts in
+                DispatchQueue.main.async {
+                    self.posts = fetchedPosts
+                }
+            })
+        
+        postService.cancellables.insert(cancellable)
     }
-
 }
-
 struct CategoriesView: View {
     @State private var categories: [Category] = []
-    private var dataService = DataService()
+    private var categoryService = CategoriesService()
     
     var body: some View {
         List(categories, id: \.id) { category in
@@ -43,20 +46,23 @@ struct CategoriesView: View {
         }
         .onAppear(perform: loadCategories)
     }
-
+    
     func loadCategories() {
-        dataService.fetchCategories { fetchedCategories, error in
-            guard let fetchedCategories = fetchedCategories else {
-                // Możesz tutaj obsłużyć błąd, jeśli chcesz
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            DispatchQueue.main.async {
-                self.categories = fetchedCategories
-            }
-        }
+        categoryService.fetchCategories()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                case .finished:
+                    break
+                }
+            }, receiveValue: { fetchedCategories in
+                DispatchQueue.main.async {
+                    self.categories = fetchedCategories
+                }
+            })
+            .store(in: &categoryService.cancellables)
     }
-
 }
 
 struct PostsView_Previews: PreviewProvider {

@@ -14,10 +14,7 @@ struct ProjektyView: View {
         VStack {
             Title(title: "Programy grantowe i projekty")
                 .padding(.bottom, 20)
-                            ProjectList()
-                                .frame(height: 600)
-                                .padding(.bottom, 20)
-            //                ContactInfo()
+            ProjectList()
         }
     }
 }

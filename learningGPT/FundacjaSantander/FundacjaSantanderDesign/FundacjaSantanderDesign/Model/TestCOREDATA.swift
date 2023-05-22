@@ -17,7 +17,8 @@ struct TestCOREDATA: View {
     private var posts: FetchedResults<Post>
     
     @State private var categoryMap: [Int16: String] = [:]
-    @StateObject private var dataService = DataService()
+    @StateObject private var postService = PostService()
+    @StateObject private var categoryService = CategoriesService()
 
     var body: some View {
         VStack {
@@ -47,20 +48,42 @@ struct TestCOREDATA: View {
             }
             
             Button(action: {
-                dataService.fetchMorePosts() { _, _ in
-                    // Update categoryMap whenever we fetch more posts
-                    categoryMap = dataService.loadCategoriesFromCoreData()
-                }   
+                postService.fetchPosts()
+                    .sink(receiveCompletion: { completion in
+                        switch completion {
+                        case .failure(let error):
+                            print("Error: \(error.localizedDescription)")
+                        case .finished:
+                            break
+                        }
+                    }, receiveValue: { _ in
+                        categoryMap = categoryService.loadCategoriesFromCoreData()
+                    })
+                    .store(in: &postService.cancellables)
             }) {
                 Text("Pobierz więcej postów")
             }
-            .disabled(dataService.isLoading || !dataService.hasMorePages)
+            .disabled(postService.isLoading || !postService.hasMorePages)
+
         }
         .onAppear {
-            dataService.fetchAndSavePosts()
-            dataService.fetchAndSaveCategories()
-            categoryMap = dataService.loadCategoriesFromCoreData()
+            categoryService.fetchAndSaveCategories()
+                .flatMap { _ in
+                    postService.fetchAndSavePosts()
+                }
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error):
+                        print("Error: \(error.localizedDescription)")
+                    case .finished:
+                        break
+                    }
+                }, receiveValue: { _ in
+                    categoryMap = categoryService.loadCategoriesFromCoreData()
+                })
+                .store(in: &categoryService.cancellables)
         }
+
     }
 }
 

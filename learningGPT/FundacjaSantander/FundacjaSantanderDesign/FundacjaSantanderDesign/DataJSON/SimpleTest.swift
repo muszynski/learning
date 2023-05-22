@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SimpleTest: View {
-    @ObservedObject var dataService = DataService()
+    @ObservedObject var dataService = PostService()
     @State private var posts: [WordpressPost] = []
     
     var body: some View {
@@ -28,16 +28,22 @@ struct SimpleTest: View {
     }
     
     private func fetchPosts() {
-        dataService.fetchMorePosts { newPosts, error in
-            if let error = error {
-                print("Failed to fetch posts:", error)
-            } else if let newPosts = newPosts {
+        dataService.fetchPosts()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Failed to fetch posts: \(error)")
+                case .finished:
+                    break
+                }
+            }, receiveValue: { newPosts in
                 DispatchQueue.main.async {
                     self.posts.append(contentsOf: newPosts)
                 }
-            }
-        }
+            })
+            .store(in: &dataService.cancellables)
     }
+
 }
 
 
