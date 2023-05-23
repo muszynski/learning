@@ -3,97 +3,101 @@
 //  FundacjaSantanderDesign
 //
 //  Created by Łukasz Muszyński on 19/05/2023.
+////
 //
-
-import Foundation
-import CoreData
-import Combine
-
-class PostService: ObservableObject {
-    @Published var currentPage: Int = 1
-    @Published var isLoading: Bool = false
-    @Published var hasMorePages: Bool = true
-    @Published var currentStatus: Status = .idle
-    let postsPerPage: Int = 10
-    var cancellables = Set<AnyCancellable>()
-    
-    func fetchPosts() -> Future<[WordpressPost], Error> {
-        Future { promise in
-            DispatchQueue.main.async {
-                self.isLoading = true
-                self.currentStatus = .loading
-                print("Starting network request...")
-            }
-
-            var urlComponents = URLComponents(string: "https://fundacja.santander.pl/wp-json/wp/v2/posts")
-            urlComponents?.queryItems = [
-                URLQueryItem(name: "per_page", value: "\(self.postsPerPage)"),
-                URLQueryItem(name: "page", value: "\(self.currentPage)")
-            ]
-
-            guard let url = urlComponents?.url else {
-                promise(.failure(NetworkError.urlError))
-                return
-            }
-
-            URLSession.shared.dataTaskPublisher(for: url)
-                .tryMap { data, response -> Data in
-                    print("Received response from server...")
-                    guard let httpResponse = response as? HTTPURLResponse,
-                          httpResponse.statusCode == 200 else {
-                        throw URLError(.badServerResponse)
-                    }
-                    return data
-                }
-                .decode(type: [WordpressPost].self, decoder: JSONDecoder())
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [weak self] completion in
-                    DispatchQueue.main.async {
-                        self?.isLoading = false
-                        print("Network request completed.")
-                        switch completion {
-                        case .failure(let error):
-                            self?.currentStatus = .serverError
-                            print("Received error: \(error)")
-                            promise(.failure(error))
-                        case .finished:
-                            self?.currentStatus = .upToDate
-                            print("Successfully received data from server.")
-                        }
-                    }
-                }, receiveValue: { [weak self] posts in
-                    DispatchQueue.main.async {
-                        self?.currentPage += 1
-                        self?.hasMorePages = posts.count == self?.postsPerPage
-                        print("Updated current page and hasMorePages.")
-                        
-                        // Here we call the global function to save posts to CoreData.
-                        savePostsToCoreData(posts: posts) { error in
-                            if let error = error {
-                                print("Failed to save posts to CoreData:", error)
-                            } else {
-                                print("Successfully saved posts to CoreData.")
-                            }
-                        }
-                        
-                        promise(.success(posts))
-                    }
-                })
-                .store(in: &self.cancellables)
-
-        }
-    }
-
-    
-    func fetchAndSavePosts() -> Future<[WordpressPost], Error> {
-        fetchPosts()
-    }
-
-    func cancel() {
-        cancellables.forEach { $0.cancel() }
-        cancellables.removeAll()
-    }
-}
+//import Foundation
+//import CoreData
+//import Combine
+//
+//class PostService: ObservableObject {
+//    @Published var currentPage: Int = 1
+//    @Published var isLoading: Bool = false
+//    @Published var hasMorePages: Bool = true
+//    @Published var currentStatus: Status = .idle
+//    let postsPerPage: Int = 10
+//    var cancellables = Set<AnyCancellable>()
+//
+//    func createURL() -> URLRequest{
+//
+//    }
+//
+//    func fetchPosts() -> Future<[WordpressPost], Error> {
+//        Future { promise in
+//            DispatchQueue.main.async {
+//                self.isLoading = true
+//                self.currentStatus = .loading
+//                print("Starting network request...")
+//            }
+//
+//            var urlComponents = URLComponents(string: "https://fundacja.santander.pl/wp-json/wp/v2/posts")
+//            urlComponents?.queryItems = [
+//                URLQueryItem(name: "per_page", value: "\(self.postsPerPage)"),
+//                URLQueryItem(name: "page", value: "\(self.currentPage)")
+//            ]
+//
+//            guard let url = urlComponents?.url else {
+//                promise(.failure(NetworkError.urlError))
+//                return
+//            }
+//
+//            URLSession.shared.dataTaskPublisher(for: url)
+//                .tryMap { data, response -> Data in
+//                    print("Received response from server...")
+//                    guard let httpResponse = response as? HTTPURLResponse,
+//                          httpResponse.statusCode == 200 else {
+//                        throw URLError(.badServerResponse)
+//                    }
+//                    return data
+//                }
+//                .decode(type: [WordpressPost].self, decoder: JSONDecoder())
+//                .receive(on: DispatchQueue.main)
+//                .sink(receiveCompletion: { [weak self] completion in
+//                    DispatchQueue.main.async {
+//                        self?.isLoading = false
+//                        print("Network request completed.")
+//                        switch completion {
+//                        case .failure(let error):
+//                            self?.currentStatus = .serverError
+//                            print("Received error: \(error)")
+//                            promise(.failure(error))
+//                        case .finished:
+//                            self?.currentStatus = .upToDate
+//                            print("Successfully received data from server.")
+//                        }
+//                    }
+//                }, receiveValue: { [weak self] posts in
+//                    DispatchQueue.main.async {
+//                        self?.currentPage += 1
+//                        self?.hasMorePages = posts.count == self?.postsPerPage
+//                        print("Updated current page and hasMorePages.")
+//
+//                        // Here we call the global function to save posts to CoreData.
+//                        savePostsToCoreData(posts: posts) { error in
+//                            if let error = error {
+//                                print("Failed to save posts to CoreData:", error)
+//                            } else {
+//                                print("Successfully saved posts to CoreData.")
+//                            }
+//                        }
+//
+//                        promise(.success(posts))
+//                    }
+//                })
+//                .store(in: &self.cancellables)
+//
+//        }
+//    }
+//
+//
+//    func fetchAndSavePosts() -> Future<[WordpressPost], Error> {
+//        fetchPosts()
+//    }
+//
+//    func cancel() {
+//        cancellables.forEach { $0.cancel() }
+//        cancellables.removeAll()
+//    }
+//}
 
 
 

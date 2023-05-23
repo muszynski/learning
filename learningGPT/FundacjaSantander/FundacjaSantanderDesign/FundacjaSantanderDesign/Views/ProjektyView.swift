@@ -14,7 +14,7 @@ struct ProjektyView: View {
         VStack {
             Title(title: "Programy grantowe i projekty")
                 .padding(.bottom, 20)
-            ProjectList()
+            TestJSON()
         }
     }
 }

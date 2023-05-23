@@ -15,7 +15,7 @@ struct FundacjaSantanderDesignApp: App {
             VStack{
 //                PostsView()
 //                CategoriesView()
-                MainView()
+                TestJSON()
                 
             }.environment(\.managedObjectContext, persistenceController.container.viewContext)
                 

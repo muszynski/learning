@@ -8,9 +8,9 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selectedTab = 0
-    @StateObject private var postService = PostService()
-    @StateObject private var categoryService = CategoriesService()
-    @State private var categoryMap: [Int16: String] = [:]
+//    @StateObject private var postService = PostService()
+//    @StateObject private var categoryService = CategoriesService()
+//    @State private var categoryMap: [Int16: String] = [:]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -55,32 +55,32 @@ struct MainView: View {
         //            DataService().fetchAndSaveCategories()
         //            categoryMap = DataService().loadCategoriesFromCoreData()
         //        }
-        .onAppear {
-            categoryService.fetchCategories()
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .failure(let error):
-                        print("Error fetching categories: \(error.localizedDescription)")
-                    case .finished:
-                        // Gdy skończy pobieranie kategorii, rozpocznij pobieranie postów
-                        postService.fetchAndSavePosts()
-                            .sink(receiveCompletion: { postCompletion in
-                                switch postCompletion {
-                                case .failure(let error):
-                                    print("Error fetching posts: \(error.localizedDescription)")
-                                case .finished:
-                                    categoryMap = categoryService.loadCategoriesFromCoreData()
-                                }
-                            }, receiveValue: { posts in
-                                // Tutaj możesz obsłużyć pobrane posty, jeśli jest to potrzebne
-                            })
-                            .store(in: &postService.cancellables)
-                    }
-                }, receiveValue: { categories in
-                    // Tutaj możesz obsłużyć pobrane kategorie, jeśli jest to potrzebne
-                })
-                .store(in: &categoryService.cancellables)
-        }
+//        .onAppear {
+//            categoryService.fetchCategories()
+//                .sink(receiveCompletion: { completion in
+//                    switch completion {
+//                    case .failure(let error):
+//                        print("Error fetching categories: \(error.localizedDescription)")
+//                    case .finished:
+//                        // Gdy skończy pobieranie kategorii, rozpocznij pobieranie postów
+//                        postService.fetchAndSavePosts()
+//                            .sink(receiveCompletion: { postCompletion in
+//                                switch postCompletion {
+//                                case .failure(let error):
+//                                    print("Error fetching posts: \(error.localizedDescription)")
+//                                case .finished:
+//                                    categoryMap = categoryService.loadCategoriesFromCoreData()
+//                                }
+//                            }, receiveValue: { posts in
+//                                // Tutaj możesz obsłużyć pobrane posty, jeśli jest to potrzebne
+//                            })
+//                            .store(in: &postService.cancellables)
+//                    }
+//                }, receiveValue: { categories in
+//                    // Tutaj możesz obsłużyć pobrane kategorie, jeśli jest to potrzebne
+//                })
+//                .store(in: &categoryService.cancellables)
+//        }
     }
 }
 

@@ -7,72 +7,33 @@
 
 import SwiftUI
 
-struct PostsView: View {
-    @State private var posts: [WordpressPost] = []
-    @StateObject private var postService = PostService()
-    
+struct TestJSON: View {
+    @ObservedObject private var wordpressAPI = WordPressAPI()
+
     var body: some View {
-        List(posts, id: \.id) { post in
-            Text(post.title.rendered)
+        List(wordpressAPI.posts.indices, id: \.self) { index in
+            Text("\(index + 1). \(wordpressAPI.posts[index].title.rendered)")
         }
-        .onAppear(perform: loadPosts)
-    }
-    
-    func loadPosts() {
-        let cancellable = postService.fetchPosts()
-            .sink(receiveCompletion: { completion in
-                switch completion {
+        .onAppear {
+            print("Przed pobraniem postów: \(wordpressAPI.posts)")
+            
+            wordpressAPI.fetchPosts(pageNumber: 1) { result in
+                switch result {
+                case .success(let posts):
+                    wordpressAPI.posts = posts
+                    print("Po pobraniu postów: \(wordpressAPI.posts)")
                 case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
-                case .finished:
-                    break
+                    print("Błąd pobierania postów: \(error)")
                 }
-            }, receiveValue: { fetchedPosts in
-                DispatchQueue.main.async {
-                    self.posts = fetchedPosts
-                }
-            })
-        
-        postService.cancellables.insert(cancellable)
-    }
-}
-struct CategoriesView: View {
-    @State private var categories: [Category] = []
-    private var categoryService = CategoriesService()
-    
-    var body: some View {
-        List(categories, id: \.id) { category in
-            Text(category.name)
+            }
         }
-        .onAppear(perform: loadCategories)
-    }
-    
-    func loadCategories() {
-        categoryService.fetchCategories()
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
-                case .finished:
-                    break
-                }
-            }, receiveValue: { fetchedCategories in
-                DispatchQueue.main.async {
-                    self.categories = fetchedCategories
-                }
-            })
-            .store(in: &categoryService.cancellables)
     }
 }
 
-struct PostsView_Previews: PreviewProvider {
+
+struct TestJSON_Previews: PreviewProvider {
     static var previews: some View {
-        PostsView()
+        TestJSON()
     }
 }
 
-struct CategoriesView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoriesView()
-    }
-}
