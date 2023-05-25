@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import CoreData
 
 func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) -> Void) {
     let context = PersistenceController.shared.container.viewContext
@@ -24,6 +25,7 @@ func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) 
                 newPost = Post(context: context)
                 newPost.idPost = Int16(post.id)
             }
+
             newPost.date = customISO8601DateFormatter().date(from: post.date)
             newPost.modified = customISO8601DateFormatter().date(from: post.modified)
             newPost.slug = post.slug
@@ -36,16 +38,6 @@ func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) 
             newPost.categories = post.categories as NSArray? ?? []
             newPost.tags = post.tags as NSArray? ?? []
             newPost.thumbnails = post.thumbnails.stringValue
-
-            if let thumbnailUrl = post.thumbnails.stringValue {
-                fetchAndSaveThumbnail(thumbnails: thumbnailUrl, context: context) { (thumbnailData, error) in
-                    guard let thumbnailData = thumbnailData else {
-                        print("Failed to fetch thumbnail:", error ?? "Unknown error")
-                        return
-                    }
-                    newPost.thumbnailsImage = thumbnailData
-                }
-            }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
             DispatchQueue.main.async {
@@ -69,6 +61,7 @@ func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) 
         }
     }
 }
+
 
 
 func saveCategoriesToCoreData(categories: [Category], completion: @escaping (Error?) -> Void) {

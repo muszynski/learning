@@ -19,8 +19,13 @@
         <attribute name="status" optional="YES" attributeType="String"/>
         <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
         <attribute name="thumbnails" optional="YES" attributeType="String"/>
-        <attribute name="thumbnailsImage" optional="YES" attributeType="Binary"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="postToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumb" inverseName="postToThumb" inverseEntity="Thumb"/>
+    </entity>
+    <entity name="Thumb" representedClassName="Thumb" syncable="YES" codeGenerationType="class">
+        <attribute name="idPost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <relationship name="postToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="postToThumb" inverseEntity="Post"/>
     </entity>
 </model>

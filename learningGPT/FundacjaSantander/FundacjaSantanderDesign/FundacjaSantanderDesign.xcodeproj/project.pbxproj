@@ -60,6 +60,7 @@
 		CDBBCCC32A1D1EAB0038718E /* PostQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */; };
 		CDF817132A1B475300FB1461 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817122A1B475300FB1461 /* CategoriesService.swift */; };
 		CDF817162A1B603C00FB1461 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817152A1B603C00FB1461 /* NetworkError.swift */; };
+		CDF967AE2A1DF75E00DC1722 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF967AD2A1DF75E00DC1722 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostQuery.swift; sourceTree = "<group>"; };
 		CDF817122A1B475300FB1461 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		CDF817152A1B603C00FB1461 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CDF967AD2A1DF75E00DC1722 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,6 @@
 			children = (
 				CD6373152A16B157005476EB /* WordpressJSONstruct.swift */,
 				CD63732C2A17978A005476EB /* TestJSON.swift */,
-				CD6F6F5C2A1A714500DD8D47 /* SimpleTest.swift */,
 			);
 			path = DataJSON;
 			sourceTree = "<group>";
@@ -147,7 +148,6 @@
 			children = (
 				CD63731C2A176CE1005476EB /* Model.xcdatamodeld */,
 				CD6373282A178561005476EB /* PersistanceController.swift */,
-				CD63732E2A17992D005476EB /* TestCOREDATA.swift */,
 				CD63732A2A1786EF005476EB /* SaveCoreData.swift */,
 				CD6373382A17B938005476EB /* GetCategoryName.swift */,
 			);
@@ -197,6 +197,7 @@
 		CDAF79F72A14E61400F4976C /* FundacjaSantanderDesign */ = {
 			isa = PBXGroup;
 			children = (
+				CDF967AC2A1DF51B00DC1722 /* Old */,
 				CDF817142A1B600300FB1461 /* Network */,
 				CD6373252A1784DC005476EB /* Extension */,
 				CD63731B2A176CCD005476EB /* Model */,
@@ -321,13 +322,23 @@
 		CDF817142A1B600300FB1461 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CD6373212A178324005476EB /* PostService.swift */,
 				CDF817122A1B475300FB1461 /* CategoriesService.swift */,
 				CDF817152A1B603C00FB1461 /* NetworkError.swift */,
 				CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */,
 				CD5791092A1D47B800E53902 /* WordPressAPI.swift */,
+				CDF967AD2A1DF75E00DC1722 /* DataManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CDF967AC2A1DF51B00DC1722 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				CD6F6F5C2A1A714500DD8D47 /* SimpleTest.swift */,
+				CD63732E2A17992D005476EB /* TestCOREDATA.swift */,
+				CD6373212A178324005476EB /* PostService.swift */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +452,7 @@
 				CD6373222A178324005476EB /* PostService.swift in Sources */,
 				CD63732D2A17978A005476EB /* TestJSON.swift in Sources */,
 				CD9ED3B02A161D6D008F23D0 /* PaymentSymbol.swift in Sources */,
+				CDF967AE2A1DF75E00DC1722 /* DataManager.swift in Sources */,
 				CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */,
 				CDAF79FB2A14E61400F4976C /* MainView.swift in Sources */,
 				CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */,
