@@ -8,4 +8,4 @@
 import Foundation
 
 var defaultLink : String = "https://fundacja.santander.pl"
-var postPerPage : Int = 20
+var postPerPage : Int = 50

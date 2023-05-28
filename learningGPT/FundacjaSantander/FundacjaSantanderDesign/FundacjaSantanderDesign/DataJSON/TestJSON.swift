@@ -19,7 +19,7 @@ struct TestJSON: View {
             
             wordpressAPI.fetchPosts(pageNumber: 1) { result in
                 switch result {
-                case .success(let posts):
+                case .success(let (posts, _)):
                     DispatchQueue.main.async {
                         wordpressAPI.posts = posts
                     }
@@ -28,6 +28,7 @@ struct TestJSON: View {
                     print("Błąd pobierania postów: \(error)")
                 }
             }
+
         }
     }
 }

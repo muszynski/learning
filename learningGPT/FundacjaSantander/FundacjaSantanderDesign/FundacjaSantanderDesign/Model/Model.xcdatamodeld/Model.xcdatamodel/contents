@@ -24,8 +24,8 @@
         <relationship name="postToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumb" inverseName="postToThumb" inverseEntity="Thumb"/>
     </entity>
     <entity name="Thumb" representedClassName="Thumb" syncable="YES" codeGenerationType="class">
-        <attribute name="idPost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="postId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="postToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="postToThumb" inverseEntity="Post"/>
     </entity>
 </model>

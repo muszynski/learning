@@ -7,25 +7,22 @@
 
 import Foundation
 
-class WordPressAPI : ObservableObject{
+class WordPressAPI : ObservableObject {
     
     @Published var posts: [WordpressPost] = []
     
     private var baseURL = defaultLink + "/wp-json/wp/v2"
 
-    func fetchPosts(pageNumber: Int, completion: @escaping (Result<[WordpressPost], NetworkError>) -> Void) {
+    func fetchPosts(pageNumber: Int, completion: @escaping (Result<([WordpressPost], URLResponse?), NetworkError>) -> Void) {
         let url = URL(string: "\(baseURL)/posts?&per_page=\(postPerPage)&page=\(pageNumber)")!
         fetchData(from: url, completion: completion)
     }
 
-
-
-    func fetchCategories(completion: @escaping (Result<[Category], NetworkError>) -> Void) {
-        let url = URL(string: "\(baseURL)/categories")!
+    func fetchCategories(from url: URL, completion: @escaping (Result<([Category], URLResponse?), NetworkError>) -> Void) {
         fetchData(from: url, completion: completion)
     }
 
-    private func fetchData<T: Decodable>(from url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    private func fetchData<T: Decodable>(from url: URL, completion: @escaping (Result<(T, URLResponse?), NetworkError>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let _ = error {
                 completion(.failure(.serverError))
@@ -39,7 +36,7 @@ class WordPressAPI : ObservableObject{
             
             do {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(decodedData))
+                completion(.success((decodedData, response)))
             } catch {
                 completion(.failure(.incorrectData))
             }
