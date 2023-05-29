@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToggleView: View {
+struct FaqItem: View {
     @State private var isExpanded = false
     @State private var showContent = false
     var title: String
@@ -31,9 +31,10 @@ struct ToggleView: View {
                 HStack {
                     Text(title)
                         .foregroundColor(Color("fontDark"))
-                        .font(.custom("SantanderText-Normal", size: 12))
+                        .font(.custom("SantanderText-Normal", size: 14))
                     Spacer()
                     Image(systemName: isExpanded ? "minus" : "plus")
+                        .foregroundColor(Color("santanderRed"))
                 }
                 .padding()
                 .background(Color("lightBlue"))
@@ -42,9 +43,11 @@ struct ToggleView: View {
 
             // Content text
             if showContent {
-                Text(content)
+                Text(cleanHTML(content))
+                    .fixedSize(horizontal: false, vertical: true) // dodaj ten modyfikator
                     .padding([.leading, .bottom, .trailing])
                     .transition(.move(edge: .top))
+                    .font(.custom("SantanderText-Normal", size: 14))
             }
         }
         .background(Color("lightBlue"))
@@ -53,9 +56,9 @@ struct ToggleView: View {
     }
 }
 
-struct ToggleView_Previews: PreviewProvider {
+struct FaqItem_Previews: PreviewProvider {
     static var previews: some View {
-        ToggleView(title: "Title", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna.")
+        FaqItem(title: "Title", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna.")
             .previewLayout(.sizeThatFits)
             .padding()
     }

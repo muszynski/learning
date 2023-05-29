@@ -78,3 +78,15 @@ struct APIErrorResponse: Decodable {
 struct ErrorResponseData: Decodable {
     let status: Int
 }
+
+struct FaqPosts: Decodable {
+    struct Rendered: Decodable {
+        let rendered: String
+    }
+
+    let id: Int
+    let date: String
+    let modified: String
+    let title: Rendered
+    let content: Rendered
+}

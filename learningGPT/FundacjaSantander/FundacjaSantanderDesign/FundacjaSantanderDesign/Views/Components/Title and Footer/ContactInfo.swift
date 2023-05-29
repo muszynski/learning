@@ -12,7 +12,7 @@ struct ContactInfo: View {
         VStack(alignment: .leading, spacing: 10) {
             Divider()
             
-    
+            Title(title: "Social Media i Kontakt")
             HStack{
 
                 Spacer()
@@ -28,7 +28,7 @@ struct ContactInfo: View {
             }
             
             
-            Title(title: "Social Media i Kontakt")
+           
             
             InfoLine(imageName: "phone", text: "22 586 89 99 – programy grantowe")
             InfoLine(imageName: "phone", text: "22 634 55 92 – sprawy administracyjne, umowy darowizn")

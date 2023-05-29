@@ -21,6 +21,12 @@ class WordPressAPI : ObservableObject {
     func fetchCategories(from url: URL, completion: @escaping (Result<([Category], URLResponse?), NetworkError>) -> Void) {
         fetchData(from: url, completion: completion)
     }
+    
+    func fetchFaqs(completion: @escaping (Result<([FaqPosts], URLResponse?), NetworkError>) -> Void) {
+        let url = URL(string: "https://fundacja.santander.pl/wp-json/wp/v2/avada_faq?faq_category=160")!
+        fetchData(from: url, completion: completion)
+    }
+
 
     private func fetchData<T: Decodable>(from url: URL, completion: @escaping (Result<(T, URLResponse?), NetworkError>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in

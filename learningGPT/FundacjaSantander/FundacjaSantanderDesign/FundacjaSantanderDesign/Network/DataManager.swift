@@ -14,6 +14,8 @@ class DataManager : ObservableObject {
     let categoriesService = CategoriesService()
     let postsQuery = PostQuery()
     let imageProcessor = ImageProcessor()
+    let faqAPI = WordPressAPI()
+    let faqService = FaqService()
     
     init(context: NSManagedObjectContext) {
         self.context = context
@@ -26,34 +28,46 @@ class DataManager : ObservableObject {
                 completion(error)
                 return
             }
-
+            
             self?.categoriesService.fetchAndSaveAllCategories { error in
                 if let error = error {
                     print("Failed to fetch and save categories: \(error.localizedDescription)")
                     completion(error)
                     return
                 }
-
+                
                 self?.fetchAndUpdatePosts(postsPerPage: postsPerPage) { error in
                     if let error = error {
                         print("Failed to fetch and update posts: \(error.localizedDescription)")
                         completion(error)
-                    } else {
-                        self?.fetchAndSaveThumbnails { error in
+                        return
+                    }
+                    
+                    self?.faqService.fetchAndSaveAllFaqs { error in
+                        if let error = error {
+                            print("Failed to fetch and save FAQs: \(error.localizedDescription)")
+                            completion(error)
+                            return
+                        }
+                        //MARK: magia
+                        /* self?.fetchAndSaveThumbnails { error in
                             if let error = error {
                                 print("Failed to fetch and save thumbnails: \(error.localizedDescription)")
+                                completion(error)
+                                return
                             }
-                            print("Posts and thumbnails updated successfully.")
+                            
+                            print("Posts, FAQs and thumbnails updated successfully.")
                             completion(nil)
-                        }
+                        } */
+                        
+                        print("Posts and FAQs updated successfully.")
+                        completion(nil)
                     }
                 }
             }
         }
     }
-
-    
-    // Usunięto fetchAndSaveCategories
 
     private func fetchAndUpdatePosts(postsPerPage: Int, completion: @escaping (Error?) -> Void) {
         postsQuery.fetchNewPostsAndSaveToCoreData(postsPerPage: postsPerPage) { error in
@@ -68,11 +82,11 @@ class DataManager : ObservableObject {
     }
     
     private var lastProcessedPostId: Int = 0
-
+    
     private func fetchAndSaveThumbnails(completion: @escaping (Error?) -> Void) {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "idPost > %d", lastProcessedPostId)
-
+        
         do {
             let posts = try context.fetch(fetchRequest)
             for post in posts {
@@ -93,8 +107,8 @@ class DataManager : ObservableObject {
             completion(error)
         }
     }
-
-
+    
+    
     
     func checkIfDataLoaded() -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
@@ -106,6 +120,46 @@ class DataManager : ObservableObject {
             return false
         }
     }
-
 }
 
+//    func fetchAndUpdateData(postsPerPage: Int, completion: @escaping (Error?) -> Void) {
+//        postsQuery.fetchWPHeaders { [weak self] error in
+//            if let error = error {
+//                print("Failed to fetch WP headers: \(error.localizedDescription)")
+//                completion(error)
+//                return
+//            }
+//
+//            self?.categoriesService.fetchAndSaveAllCategories { error in
+//                if let error = error {
+//                    print("Failed to fetch and save categories: \(error.localizedDescription)")
+//                    completion(error)
+//                    return
+//                }
+//
+//                self?.fetchAndUpdatePosts(postsPerPage: postsPerPage) { error in
+//                    if let error = error {
+//                        print("Failed to fetch and update posts: \(error.localizedDescription)")
+//                        completion(error)
+//                    } else {
+//                        self?.fetchAndSaveThumbnails { error in
+//                            if let error = error {
+//                                print("Failed to fetch and save thumbnails: \(error.localizedDescription)")
+//                                completion(error)
+//                                return
+//                            }
+//
+//                            // Now call the fetch and save FAQs function
+//                            self?.faqService.fetchAndSaveAllFaqs { error in
+//                                if let error = error {
+//                                    print("Failed to fetch and save FAQs: \(error.localizedDescription)")
+//                                }
+//                                print("Posts, thumbnails and FAQs updated successfully.")
+//                                completion(nil)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }

@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreData
-import SwiftUIX
 
 struct ProjectList: View {
     @Environment(\.managedObjectContext) private var viewContext

@@ -26,7 +26,7 @@ struct NewsItem: View {
                         .bold()
                         .font(.custom("SantanderText-Bold", size: 14))
                         .padding(.bottom, 1)
-                        .lineSpacing(16)
+                        .lineSpacing(4)
                         .foregroundColor(Color("fontGray"))
                     
                     Text(cleanHTML(content))
@@ -58,7 +58,7 @@ struct NewsItem: View {
 struct NewsItem_Previews: PreviewProvider {
     static var previews: some View {
         NewsItem(imageData: Data(),
-                 title: "News Title",
+                 title: "uspendisse gravida, justo ac ultricies egestas",
                  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna.")
     }
 }

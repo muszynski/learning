@@ -14,7 +14,7 @@ struct AktualnosciView: View {
             VStack{
                 Title(title: "Aktualności")
                 NewsLists()
-                PaginationButtons()
+//                PaginationButtons()
                 ContactInfo()
             }
         }

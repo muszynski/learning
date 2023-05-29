@@ -6,6 +6,13 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="slug" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Faq" representedClassName="Faq" syncable="YES" codeGenerationType="class">
+        <attribute name="faqContent" optional="YES" attributeType="String"/>
+        <attribute name="faqDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="faqId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="faqModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="faqTitle" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Post" representedClassName="Post" syncable="YES" codeGenerationType="class">
         <attribute name="categories" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
         <attribute name="content" optional="YES" attributeType="String"/>
