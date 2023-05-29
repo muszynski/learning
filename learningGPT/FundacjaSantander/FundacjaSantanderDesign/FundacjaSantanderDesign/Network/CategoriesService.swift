@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class CategoriesService {
     
@@ -32,5 +33,20 @@ class CategoriesService {
             }
         }
     }
+    
+    // Nowa funkcja do pobierania nazwy kategorii na podstawie jej ID
+    func getCategoryName(id: Int16, from context: NSManagedObjectContext) -> String? {
+        let fetchRequest: NSFetchRequest<Categories> = Categories.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "idCategory = %d", id)
+        do {
+            let categories = try context.fetch(fetchRequest)
+            return categories.first?.name
+        } catch {
+            print("Failed to fetch category with ID \(id):", error)
+            return nil
+        }
+    }
+
 }
+
 

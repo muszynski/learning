@@ -129,7 +129,7 @@ class PostQuery : ObservableObject {
             }
         }
     }
-    
+
     func fetchAndSavePosts(pageNumber: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
         wordpressApi.fetchPosts(pageNumber: pageNumber) { (result: Result<([WordpressPost], URLResponse?), NetworkError>) in
             switch result {
@@ -142,9 +142,9 @@ class PostQuery : ObservableObject {
                     } else {
                         print("Posts on page \(pageNumber) saved successfully. Total posts: \(posts.count)")
                     }
-                    
+
                     let group = DispatchGroup()
-                    
+
                     for post in posts {
                         group.enter()
                         self.imageProcessor.fetchAndSaveThumbnail(thumbnail: post.thumbnails, postId: Int(post.id), context: self.context) { error in
@@ -156,7 +156,7 @@ class PostQuery : ObservableObject {
                             group.leave()
                         }
                     }
-                    
+
                     group.notify(queue: .main) {
                         print("All thumbnails fetched and saved.")
                         completion(posts, nil)

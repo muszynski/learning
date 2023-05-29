@@ -42,6 +42,12 @@ func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) 
                 newPost.content = post.content.rendered
                 newPost.excerpt = post.excerpt.rendered
                 newPost.categories = post.categories as NSArray? ?? []
+                // Debugowanie
+                if let categories = newPost.categories as? [NSNumber] {
+                    print("Categories for post \(post.id): \(categories)")
+                } else {
+                    print("Could not convert categories for post \(post.id) to [NSNumber]")
+                }
                 newPost.tags = post.tags as NSArray? ?? []
                 newPost.thumbnails = post.thumbnails.stringValue
                 print("URL miniatury: \(String(describing: post.thumbnails.stringValue))")

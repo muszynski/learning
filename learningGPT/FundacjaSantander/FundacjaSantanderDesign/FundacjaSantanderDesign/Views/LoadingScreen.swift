@@ -23,26 +23,21 @@ struct LoadingScreen: View {
             StatusView(status: loadingStatus)
         }
         .onAppear {
-            if dataManager.checkIfDataLoaded() {
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    loadingStatus = .upToDate
-                    dataLoaded = true
-                }
-            } else {
-                loadingStatus = .loading
-                dataManager.fetchAndUpdateData(postsPerPage: 50) { error in
-                    if let error = error {
-                        print("Failed to fetch and update data: \(error.localizedDescription)")
-                        loadingStatus = .serverError
-                    } else {
-                        withAnimation(.easeInOut(duration: 0.5)) {
-                            loadingStatus = .upToDate
-                            dataLoaded = true
-                        }
+            loadingStatus = .loading
+            dataManager.fetchAndUpdateData(postsPerPage: 50) { error in
+                if let error = error {
+                    print("Failed to fetch and update data: \(error.localizedDescription)")
+                    loadingStatus = .serverError
+                } else {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        loadingStatus = .upToDate
+                        dataLoaded = true
                     }
                 }
             }
         }
+
+
         .fullScreenCover(isPresented: $dataLoaded) {
             MainView()
         }
@@ -60,4 +55,3 @@ struct LoadingScreen_Previews: PreviewProvider {
             }
     }
 }
-

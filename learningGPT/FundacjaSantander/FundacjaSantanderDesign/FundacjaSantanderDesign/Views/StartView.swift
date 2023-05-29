@@ -17,10 +17,8 @@ struct StartView: View {
                 Spacer()
                     .frame(height: 170)
                 DonationBanner()
-
-                VStack {
-Text("")
-                }
+                ProjectList()
+                    .padding(.bottom)
                 ContactInfo()
             }
         }

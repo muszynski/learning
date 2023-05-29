@@ -66,15 +66,26 @@ class DataManager : ObservableObject {
             }
         }
     }
+    
+    private var lastProcessedPostId: Int = 0
 
     private func fetchAndSaveThumbnails(completion: @escaping (Error?) -> Void) {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "idPost > %d", lastProcessedPostId)
 
         do {
             let posts = try context.fetch(fetchRequest)
             for post in posts {
                 if let thumbnailUrl = post.thumbnails {
-                    imageProcessor.fetchAndSaveThumbnail(thumbnail: thumbnailUrl, postId: Int(post.idPost), context: context, completion: completion)
+                    imageProcessor.fetchAndSaveThumbnail(thumbnail: .string(thumbnailUrl), postId: Int(post.idPost), context: context) { error in
+                        if let error = error {
+                            print("Failed to fetch and save thumbnail: \(error.localizedDescription)")
+                            completion(error)
+                        } else {
+                            self.lastProcessedPostId = Int(post.idPost)
+                            completion(nil)
+                        }
+                    }
                 }
             }
         } catch {
@@ -82,6 +93,8 @@ class DataManager : ObservableObject {
             completion(error)
         }
     }
+
+
     
     func checkIfDataLoaded() -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
@@ -96,17 +109,3 @@ class DataManager : ObservableObject {
 
 }
 
-
-
-
-//    private func fetchAndSaveCategories(completion: @escaping (Error?) -> Void) {
-//        categoriesService.fetchAndSaveCategories { error in
-//            if let error = error {
-//                print("Failed to fetch and save categories: \(error.localizedDescription)")
-//                completion(error)
-//            } else {
-//                print("Categories saved successfully.")
-//                completion(nil)
-//            }
-//        }
-//    }

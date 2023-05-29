@@ -25,7 +25,9 @@ class WordPressAPI : ObservableObject {
     private func fetchData<T: Decodable>(from url: URL, completion: @escaping (Result<(T, URLResponse?), NetworkError>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let _ = error {
-                completion(.failure(.serverError))
+                let httpResponse = response as? HTTPURLResponse
+                let statusCode = httpResponse?.statusCode ?? 0
+                completion(.failure(.serverError(statusCode)))
                 return
             }
             
@@ -38,10 +40,11 @@ class WordPressAPI : ObservableObject {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 completion(.success((decodedData, response)))
             } catch {
-                completion(.failure(.incorrectData))
+                completion(.failure(.decodingError))
             }
         }
         task.resume()
+
     }
 }
 

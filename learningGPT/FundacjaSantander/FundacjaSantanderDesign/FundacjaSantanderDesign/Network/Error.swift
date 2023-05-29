@@ -13,7 +13,8 @@ enum NetworkError: Error {
     case savingError
     case urlError
     case incorrectData
-    case serverError
+    case serverError(Int)
+    case notFound
     // Możesz dodać inne błędy związane z siecią
 
     var localizedDescription: String {
@@ -28,8 +29,10 @@ enum NetworkError: Error {
             return "Błąd tworzenia URL"
         case .incorrectData:
             return "Otrzymano niepoprawne dane"
-        case .serverError:
-            return "Błąd serwera"
+        case .serverError(let code):
+            return "Błąd serwera (kod: \(code))"
+        case .notFound:
+            return "Zasób nie został znaleziony"
         }
     }
 }

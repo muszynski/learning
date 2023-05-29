@@ -11,17 +11,18 @@ import SwiftUI
 
 class ImageProcessor {
     
+
     func fetchAndSaveThumbnail(thumbnail: Thumbnail, postId: Int, context: NSManagedObjectContext, completion: @escaping (Error?) -> Void) {
         let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateContext.parent = context
-        
+
         doesThumbnailExist(postId: postId, context: privateContext) { (exists, error) in
             if exists || error != nil {
                 print("Thumbnail already exists or there was an error: \(String(describing: error))")
                 completion(CoreDataError.fetchingError)
                 return
             }
-            
+
             switch thumbnail {
             case .string(let urlString):
                 self.fetchImageData(from: urlString) { (data, error) in
@@ -30,13 +31,13 @@ class ImageProcessor {
                         completion(NetworkError.fetchingError)
                         return
                     }
-                    
+
                     let targetWidth: CGFloat = 100
                     guard let resizedImageData = self.resizeImageData(data, toWidth: targetWidth) else {
                         completion(NetworkError.incorrectData)
                         return
                     }
-                    
+
                     self.saveThumbnail(postId: postId, imageData: resizedImageData, context: privateContext) { error in
                         if let error = error {
                             completion(error)
@@ -159,4 +160,32 @@ class ImageProcessor {
             }
         }
     }
+    
+    func fetchImageWithRetry(url: URL, retryCount: Int = 3) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let httpResponse = response as? HTTPURLResponse {
+                switch httpResponse.statusCode {
+                case 404:
+                    print("Network Error: \(NetworkError.notFound.localizedDescription)")
+                default:
+                    // handle other status codes...
+                    break
+                }
+            }
+            
+            if let error = error as NSError?, error.domain == NSURLErrorDomain && retryCount > 0 {
+                print("Failed to fetch image, retrying in 1 second...")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.fetchImageWithRetry(url: url, retryCount: retryCount - 1)
+                }
+            } else if let data = data {
+                // Process image data
+                print("Image data fetched successfully")
+            }
+        }
+        
+        task.resume()
+    }
+
+    
 }

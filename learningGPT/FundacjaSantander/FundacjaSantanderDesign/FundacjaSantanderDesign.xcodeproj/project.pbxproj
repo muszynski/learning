@@ -23,17 +23,20 @@
 		CD6373352A17A59E005476EB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373342A17A59E005476EB /* SafariView.swift */; };
 		CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373362A17AF9D005476EB /* ImageHolder.swift */; };
 		CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373382A17B938005476EB /* GetCategoryName.swift */; };
-		CD6C411A2A209B830028A2BC /* CoreDataTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C41192A209B830028A2BC /* CoreDataTestView.swift */; };
+		CD6C411A2A209B830028A2BC /* ProjektyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C41192A209B830028A2BC /* ProjektyView.swift */; };
 		CD6C411F2A20E5040028A2BC /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C411E2A20E5040028A2BC /* LoadingScreen.swift */; };
 		CD7DE5512A18BC22007DD036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DE5502A18BC22007DD036 /* GlobalVariable.swift */; };
 		CD80C5D82A15E63700631827 /* DonationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD80C5D72A15E63700631827 /* DonationForm.swift */; };
-		CD831AFF2A18D61E0032343E /* ProjektyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD831AFE2A18D61E0032343E /* ProjektyView.swift */; };
 		CD9ED3B02A161D6D008F23D0 /* PaymentSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */; };
 		CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B22A162BD4008F23D0 /* ContactInfo.swift */; };
 		CD9ED3B52A163274008F23D0 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B42A163274008F23D0 /* Title.swift */; };
 		CD9ED3B72A1634ED008F23D0 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B62A1634ED008F23D0 /* NewsItem.swift */; };
 		CD9ED3B92A163908008F23D0 /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B82A163908008F23D0 /* ToggleView.swift */; };
 		CD9ED3BB2A1644C3008F23D0 /* PaginationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3BA2A1644C3008F23D0 /* PaginationButton.swift */; };
+		CDA95DD22A2499940043AE8B /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = CDA95DD12A2499940043AE8B /* SwiftUIX */; };
+		CDA95DD52A2499BC0043AE8B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CDA95DD42A2499BC0043AE8B /* Lottie */; };
+		CDA95DD72A24ACBC0043AE8B /* NewsLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA95DD62A24ACBC0043AE8B /* NewsLists.swift */; };
+		CDA95DD92A24B7810043AE8B /* LinkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA95DD82A24B7810043AE8B /* LinkImageView.swift */; };
 		CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF79F82A14E61400F4976C /* FundacjaSantanderDesignApp.swift */; };
 		CDAF79FB2A14E61400F4976C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF79FA2A14E61400F4976C /* MainView.swift */; };
 		CDAF79FD2A14E61500F4976C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAF79FC2A14E61500F4976C /* Assets.xcassets */; };
@@ -83,17 +86,18 @@
 		CD6373342A17A59E005476EB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CD6373362A17AF9D005476EB /* ImageHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHolder.swift; sourceTree = "<group>"; };
 		CD6373382A17B938005476EB /* GetCategoryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryName.swift; sourceTree = "<group>"; };
-		CD6C41192A209B830028A2BC /* CoreDataTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestView.swift; sourceTree = "<group>"; };
+		CD6C41192A209B830028A2BC /* ProjektyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjektyView.swift; sourceTree = "<group>"; };
 		CD6C411E2A20E5040028A2BC /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		CD7DE5502A18BC22007DD036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		CD80C5D72A15E63700631827 /* DonationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForm.swift; sourceTree = "<group>"; };
-		CD831AFE2A18D61E0032343E /* ProjektyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjektyView.swift; sourceTree = "<group>"; };
 		CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSymbol.swift; sourceTree = "<group>"; };
 		CD9ED3B22A162BD4008F23D0 /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		CD9ED3B42A163274008F23D0 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		CD9ED3B62A1634ED008F23D0 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		CD9ED3B82A163908008F23D0 /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		CD9ED3BA2A1644C3008F23D0 /* PaginationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationButton.swift; sourceTree = "<group>"; };
+		CDA95DD62A24ACBC0043AE8B /* NewsLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLists.swift; sourceTree = "<group>"; };
+		CDA95DD82A24B7810043AE8B /* LinkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkImageView.swift; sourceTree = "<group>"; };
 		CDAF79F52A14E61400F4976C /* FundacjaSantanderDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FundacjaSantanderDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAF79F82A14E61400F4976C /* FundacjaSantanderDesignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundacjaSantanderDesignApp.swift; sourceTree = "<group>"; };
 		CDAF79FA2A14E61400F4976C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA95DD22A2499940043AE8B /* SwiftUIX in Frameworks */,
+				CDA95DD52A2499BC0043AE8B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +161,6 @@
 				CD6373282A178561005476EB /* PersistanceController.swift */,
 				CD63732A2A1786EF005476EB /* SaveCoreData.swift */,
 				CD6373382A17B938005476EB /* GetCategoryName.swift */,
-				CD6C41192A209B830028A2BC /* CoreDataTestView.swift */,
 				CD1916262A2385B800203347 /* CoreDataTestCategoryView.swift */,
 				CD19162A2A23BB1000203347 /* CoreDataThumbTestView.swift */,
 			);
@@ -181,6 +186,7 @@
 				CD9ED3B42A163274008F23D0 /* Title.swift */,
 				CD63731F2A17751C005476EB /* StatusView.swift */,
 				CD1916282A238F0C00203347 /* AnimatedLogo.swift */,
+				CDA95DD82A24B7810043AE8B /* LinkImageView.swift */,
 			);
 			path = "Title and Footer";
 			sourceTree = "<group>";
@@ -234,7 +240,7 @@
 				CDAF7A392A154F8300F4976C /* Navigation */,
 				CDAF7A2F2A15137600F4976C /* Components */,
 				CDAF7A072A14ECD700F4976C /* StartView.swift */,
-				CD831AFE2A18D61E0032343E /* ProjektyView.swift */,
+				CD6C41192A209B830028A2BC /* ProjektyView.swift */,
 				CDAF7A092A14ECED00F4976C /* AktualnosciView.swift */,
 				CDAF7A0B2A14ECFF00F4976C /* PomagajView.swift */,
 				CDAF7A0F2A14ED1D00F4976C /* FAQView.swift */,
@@ -312,6 +318,7 @@
 				CD9ED3B82A163908008F23D0 /* ToggleView.swift */,
 				CD9ED3BA2A1644C3008F23D0 /* PaginationButton.swift */,
 				CDAF7A0D2A14ED0F00F4976C /* ProjectList.swift */,
+				CDA95DD62A24ACBC0043AE8B /* NewsLists.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -355,6 +362,10 @@
 			dependencies = (
 			);
 			name = FundacjaSantanderDesign;
+			packageProductDependencies = (
+				CDA95DD12A2499940043AE8B /* SwiftUIX */,
+				CDA95DD42A2499BC0043AE8B /* Lottie */,
+			);
 			productName = FundacjaSantanderDesign;
 			productReference = CDAF79F52A14E61400F4976C /* FundacjaSantanderDesign.app */;
 			productType = "com.apple.product-type.application";
@@ -383,6 +394,10 @@
 				Base,
 			);
 			mainGroup = CDAF79EC2A14E61400F4976C;
+			packageReferences = (
+				CDA95DD02A2499940043AE8B /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				CDA95DD32A2499BC0043AE8B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = CDAF79F62A14E61400F4976C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -422,6 +437,7 @@
 				CD6373272A178500005476EB /* DateConverter.swift in Sources */,
 				CDF817132A1B475300FB1461 /* CategoriesService.swift in Sources */,
 				CDAF7A372A15432600F4976C /* ProjectItem.swift in Sources */,
+				CDA95DD92A24B7810043AE8B /* LinkImageView.swift in Sources */,
 				CD9ED3B52A163274008F23D0 /* Title.swift in Sources */,
 				CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */,
 				CDAF7A0E2A14ED0F00F4976C /* ProjectList.swift in Sources */,
@@ -434,10 +450,10 @@
 				CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */,
 				CDAF7A0C2A14ECFF00F4976C /* PomagajView.swift in Sources */,
 				CD1916272A2385B800203347 /* CoreDataTestCategoryView.swift in Sources */,
-				CD831AFF2A18D61E0032343E /* ProjektyView.swift in Sources */,
 				CD9ED3B72A1634ED008F23D0 /* NewsItem.swift in Sources */,
-				CD6C411A2A209B830028A2BC /* CoreDataTestView.swift in Sources */,
+				CD6C411A2A209B830028A2BC /* ProjektyView.swift in Sources */,
 				CD6373332A17A561005476EB /* CleanHTML.swift in Sources */,
+				CDA95DD72A24ACBC0043AE8B /* NewsLists.swift in Sources */,
 				CD6373312A17A20B005476EB /* FetchAndSaveThumbnails.swift in Sources */,
 				CD6373202A17751C005476EB /* StatusView.swift in Sources */,
 				CDBBCCC32A1D1EAB0038718E /* PostQuery.swift in Sources */,
@@ -589,7 +605,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -608,7 +624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -626,7 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -645,7 +661,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -679,6 +695,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDA95DD02A2499940043AE8B /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.5;
+			};
+		};
+		CDA95DD32A2499BC0043AE8B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDA95DD12A2499940043AE8B /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDA95DD02A2499940043AE8B /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+		CDA95DD42A2499BC0043AE8B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDA95DD32A2499BC0043AE8B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CD63731C2A176CE1005476EB /* Model.xcdatamodeld */ = {
