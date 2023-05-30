@@ -14,7 +14,7 @@ struct PomagajView: View {
                 DonationBannerForm()
                     .padding(.bottom, 40) // dodaj padding zamiast Spacer
                 Blik()
-                DonationForm()
+                DonationForms()
                 PaymentSymbol()
                 ContactInfo()
             }

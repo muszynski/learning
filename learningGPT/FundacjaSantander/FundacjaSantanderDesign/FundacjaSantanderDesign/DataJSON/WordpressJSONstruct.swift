@@ -21,6 +21,7 @@ struct WordpressPost: Decodable{
     let categories: [Int]
     let tags: [Int]
     let thumbnails: Thumbnail
+    let author : Int
 }
 
 struct TitlePost: Decodable {

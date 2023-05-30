@@ -30,11 +30,11 @@ struct ContactInfo: View {
             
            
             
-            InfoLine(imageName: "phone", text: "22 586 89 99 – programy grantowe")
-            InfoLine(imageName: "phone", text: "22 634 55 92 – sprawy administracyjne, umowy darowizn")
-            InfoLine(imageName: "phone", text: "22 534 17 26 – stypendia")
-            InfoLine(imageName: "phone", text: "22 534 17 50 – wolontariat pracowniczy")
-            InfoLine(imageName: "email", text: "fundacja@santander.pl")
+            InfoLine(imageName: "phone", text: "22 586 89 99 – programy grantowe", width: 24, height: 24)
+            InfoLine(imageName: "phone", text: "22 634 55 92 – sprawy administracyjne, umowy darowizn", width: 24, height: 24)
+            InfoLine(imageName: "phone", text: "22 534 17 26 – stypendia", width: 24, height: 24)
+            InfoLine(imageName: "phone", text: "22 534 17 50 – wolontariat pracowniczy", width: 24, height: 24)
+            InfoLine(imageName: "email", text: "fundacja@santander.pl", width: 24, height: 17)
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -46,16 +46,15 @@ struct ContactInfo: View {
 struct InfoLine: View {
     var imageName: String
     var text: String
+    var width : CGFloat
+    var height : CGFloat
 
     var body: some View {
         HStack {
             Image(imageName)
                 .resizable()
-                .frame(width: 24, height: 24)
+                .frame(width: width, height: height)
                 .padding(7)
-//                .background(Color("fontGray"))
-//                .foregroundColor(.white)
-//                .clipShape(Circle())
             
             Text(text)
                 .font(.custom("SantanderText-Normal", size: 14))

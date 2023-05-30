@@ -26,6 +26,7 @@ struct FAQView: View {
                 }
                 .padding()
                 ContactInfo()
+                TestTextView()
             }
         }
     }

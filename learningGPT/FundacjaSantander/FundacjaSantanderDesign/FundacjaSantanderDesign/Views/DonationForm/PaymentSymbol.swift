@@ -12,13 +12,23 @@ struct PaymentSymbol: View {
     
     var body: some View {
         VStack{
-            HStack {
-                PaymentSingleIcon(paymentIcon: "blikBialy", paymentName: "BLIK", paymentText: "Szybka płatność on-line")
-                PaymentSingleIcon(paymentIcon: "przelew", paymentName: "Przelew", paymentText: "On-line lub tradycyjny")
-            }
-            HStack {
-                PaymentSingleIcon(paymentIcon: "karta", paymentName: "Karta", paymentText: "Debetowa lub kredytowa")
-                PaymentSingleIcon(paymentIcon: "portfel", paymentName: "Portfele elektroniczne", paymentText: "Google Play, Paypall")
+//            HStack {
+//                PaymentSingleIcon(paymentIcon: "blikBialy", paymentName: "BLIK", paymentText: "Szybka płatność on-line")
+//                PaymentSingleIcon(paymentIcon: "przelew", paymentName: "Przelew", paymentText: "On-line lub tradycyjny")
+//            }
+//            HStack {
+//                PaymentSingleIcon(paymentIcon: "karta", paymentName: "Karta", paymentText: "Debetowa lub kredytowa")
+//                PaymentSingleIcon(paymentIcon: "portfel", paymentName: "Portfele elektroniczne", paymentText: "Google Play, Paypall")
+//            }
+            HStack{
+                Spacer()
+                Text("Płatności zapewnia")
+                    .font(.custom("SantanderText-Normal", size: 14))
+                Image("tPayLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 64)
+                Spacer()
             }
         }
     }

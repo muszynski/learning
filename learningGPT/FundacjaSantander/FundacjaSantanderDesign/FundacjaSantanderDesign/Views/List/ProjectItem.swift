@@ -24,7 +24,7 @@ struct ProjectItem: View {
                     .frame(width: 77, height: 160)
                     .clipped()
                 VStack(alignment: .leading) {
-                    Text(cleanHTML(title))
+                    Text(title)
                         .bold()
                         .font(.custom("SantanderText-Bold", size: 14))
                         .padding(.bottom, 3.0)
@@ -32,7 +32,7 @@ struct ProjectItem: View {
                         .foregroundColor(Color("fontGray"))
                         .lineLimit(2)
 
-                    Text(cleanHTML(content))
+                    Text(content)
                         .font(.custom("SantanderText-Normal", size: 12))
                         .lineSpacing(4)
                         .foregroundColor(Color("fontGray"))
@@ -65,6 +65,7 @@ struct ProjectItem: View {
                 .cornerRadius(4)
                 .padding(10)
                 .offset(y: -15)
+                .textCase(.uppercase)
             
             Text(datePublication)
                 .font(.custom("SantanderText-Normal", size: 12))

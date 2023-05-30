@@ -186,6 +186,4 @@ class ImageProcessor {
         
         task.resume()
     }
-
-    
 }

@@ -26,14 +26,15 @@ struct ProjectList: View {
                LazyVStack {
                    ForEach(posts.filter { post in
                        if let categoryArray = post.categories as? [Int] {
-                           return categoryArray.contains(where: { $0 == 6 || $0 == 5 })
+                           return categoryArray.contains(where: { $0 == 5 || $0 == 6 })
                        }
                        return false
                    }, id: \.self) { post in
-                       if let thumb = post.postToThumb, let imageData = thumb.imageData, let categoryArray = post.categories as? [Int] {
+                       if let categoryArray = post.categories as? [Int] {
                            let categoryNamesString = getCategoryNamesFromIds(categoryArray)
                            if let date = post.date {
                                let formattedDate = formattedDateDayMontYear(from: date)
+                               let imageData = post.postToThumb?.imageData
                                let projectItem = ProjectItem(imageData: imageData,
                                                              title: post.title ?? "",
                                                              content: post.content ?? "",
@@ -72,3 +73,5 @@ struct ProjectList_Previews: PreviewProvider {
         ProjectList()
     }
 }
+
+

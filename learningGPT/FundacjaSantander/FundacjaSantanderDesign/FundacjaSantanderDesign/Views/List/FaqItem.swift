@@ -12,8 +12,10 @@ struct FaqItem: View {
     @State private var showContent = false
     var title: String
     var content: String
-
+    var textProcessor = TextProcessor()
     var body: some View {
+        
+        
         VStack(alignment: .leading) {
             // Button with title
             Button(action: {
@@ -31,7 +33,8 @@ struct FaqItem: View {
                 HStack {
                     Text(title)
                         .foregroundColor(Color("fontDark"))
-                        .font(.custom("SantanderText-Normal", size: 14))
+                        .font(.custom("SantanderText-Bold", size: 14))
+                        .multilineTextAlignment(.leading)
                     Spacer()
                     Image(systemName: isExpanded ? "minus" : "plus")
                         .foregroundColor(Color("santanderRed"))
@@ -43,11 +46,12 @@ struct FaqItem: View {
 
             // Content text
             if showContent {
-                Text(cleanHTML(content))
-                    .fixedSize(horizontal: false, vertical: true) // dodaj ten modyfikator
+                Text(textProcessor.cleanHTMLSwiftSoup(stringToClean: content))
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding([.leading, .bottom, .trailing])
                     .transition(.move(edge: .top))
                     .font(.custom("SantanderText-Normal", size: 14))
+                    .multilineTextAlignment(.leading)
             }
         }
         .background(Color("lightBlue"))
@@ -58,7 +62,7 @@ struct FaqItem: View {
 
 struct FaqItem_Previews: PreviewProvider {
     static var previews: some View {
-        FaqItem(title: "Title", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna.")
+        FaqItem(title: "Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna.")
             .previewLayout(.sizeThatFits)
             .padding()
     }

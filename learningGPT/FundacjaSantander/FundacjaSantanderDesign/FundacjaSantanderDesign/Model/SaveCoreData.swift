@@ -10,6 +10,9 @@
 import CoreData
 
 func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) -> Void) {
+    
+    let textProcessor = TextProcessor()
+    
     let context = PersistenceController.shared.container.viewContext
     context.perform {
         for post in posts {
@@ -38,9 +41,11 @@ func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) 
                 newPost.status = post.status
                 newPost.type = post.type
                 newPost.link = post.link
-                newPost.title = post.title.rendered
-                newPost.content = post.content.rendered
+    //MARK: dodano czyszczenie z html przed zapisem posta - zwrocic uwage na obciazenie
+                newPost.title = textProcessor.cleanHTMLSwiftSoup(stringToClean: post.title.rendered)
+                newPost.content = textProcessor.cleanHTMLSwiftSoup(stringToClean: post.content.rendered)
                 newPost.excerpt = post.excerpt.rendered
+                newPost.author = Int16(newPost.author)
                 newPost.categories = post.categories as NSArray? ?? []
                 // Debugowanie
                 if let categories = newPost.categories as? [NSNumber] {

@@ -6,23 +6,25 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct AktualnosciView: View {
     var body: some View {
-        ScrollView {
-            VStack{
-                Title(title: "Aktualności")
-                NewsLists()
-//                PaginationButtons()
-                ContactInfo()
+        NavigationView {
+            ScrollView {
+                VStack {
+                    Title(title: "Aktualności")
+                    NewsLists()
+                    ContactInfo()
+                }
             }
         }
     }
 }
+
 
 struct AktualnosciView_Previews: PreviewProvider {
     static var previews: some View {
         AktualnosciView()
     }
 }
+
