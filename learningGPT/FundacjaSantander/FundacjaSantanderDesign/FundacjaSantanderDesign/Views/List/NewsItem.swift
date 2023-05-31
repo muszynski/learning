@@ -36,7 +36,7 @@ struct NewsItem: View {
                         .font(.custom("SantanderText-Bold", size: 12))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom, 0.5)
-                        .lineSpacing(0)
+                        .lineSpacing(-2)
                         .foregroundColor(Color("fontGray"))
                         .lineLimit(2)
 
@@ -77,7 +77,3 @@ struct NewsItem_Previews: PreviewProvider {
                  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus turpis sed tortor laoreet, sed pulvinar sem tristique. Curabitur ut ante ullamcorper, interdum sapien non, mollis turpis. Ut congue erat eu risus accumsan fermentum. Suspendisse gravida, justo ac ultricies egestas, dolor arcu accumsan sapien, a facilisis ligula massa a magna.", datePublication: "22.22.2222")
     }
 }
-
-
-
-

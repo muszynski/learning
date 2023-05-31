@@ -47,6 +47,8 @@ struct NewsDetailView: View {
                     .lineSpacing(3)
                     .foregroundColor(Color("fontGray"))
                     .padding(.top)
+                
+                WebView(htmlContent: post.content ?? "Failed fetch data")
             }
             .padding()
         }

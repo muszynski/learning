@@ -23,10 +23,13 @@ struct FAQView: View {
                     ForEach(faqs) { faq in
                         FaqItem(title: faq.faqTitle ?? "Tytuł", content: faq.faqContent ?? "Treść")
                     }
+//                    TestTextView()
+                   
                 }
                 .padding()
                 ContactInfo()
-                TestTextView()
+//                CategoriesView()
+//                TestTextView()
             }
         }
     }
