@@ -38,7 +38,7 @@ struct NewsDetailView: View {
                     Text(formattedDateDayMontYear(from: post.date ?? Date())) // If date doesn't exist, use current date as default
                         .font(.custom("SantanderText-Bold", size: 16))
                         .lineSpacing(3)
-                        .foregroundColor(Color("fontGray"))
+                        .foregroundColor(Color("santanderRed"))
                 }
                 .padding(.top)
                 
@@ -48,7 +48,7 @@ struct NewsDetailView: View {
                     .foregroundColor(Color("fontGray"))
                     .padding(.top)
                 
-                WebView(htmlContent: post.content ?? "Failed fetch data")
+                ContactInfo()
             }
             .padding()
         }
@@ -58,13 +58,8 @@ struct NewsDetailView: View {
         .navigationTitle("Aktualności")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
-    private func formattedDateDayMontYear(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy" // Modify as needed
-        return formatter.string(from: date)
-    }
 }
+
 
 struct NewsDetailView_Previews: PreviewProvider {
     static var previews: some View {

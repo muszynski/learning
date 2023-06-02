@@ -9,10 +9,15 @@ import SwiftUI
 
 struct TestJSON: View {
     @ObservedObject private var wordpressAPI = WordPressAPI()
-
+    
     var body: some View {
         List(wordpressAPI.posts.indices, id: \.self) { index in
-            Text("\(index + 1). \(wordpressAPI.posts[index].title.rendered)")
+            let post = wordpressAPI.posts[index]
+            let author = Author(rawValue: post.author)
+            VStack(alignment: .leading) {
+                Text("\(index + 1). \(post.title.rendered)")
+                Text("Autor: \(author.name)")
+            }
         }
         .onAppear {
             print("Przed pobraniem postów: \(wordpressAPI.posts)")
@@ -28,10 +33,10 @@ struct TestJSON: View {
                     print("Błąd pobierania postów: \(error)")
                 }
             }
-
         }
     }
 }
+
 
 
 struct TestJSON_Previews: PreviewProvider {

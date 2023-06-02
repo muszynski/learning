@@ -38,7 +38,7 @@ struct ContactInfo: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .padding([.leading, .trailing], UIScreen.main.bounds.width * 0.05) // 5% padding on each side will make the width 90% of the screen width
+        .padding([.leading, .trailing], UIScreen.main.bounds.width * 0.00) // 5% padding on each side will make the width 90% of the screen width
     }
 }
 

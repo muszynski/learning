@@ -24,7 +24,7 @@ struct FAQView: View {
                         FaqItem(title: faq.faqTitle ?? "Tytuł", content: faq.faqContent ?? "Treść")
                     }
 //                    TestTextView()
-                   
+//                   PaymentsLinkTest()
                 }
                 .padding()
                 ContactInfo()

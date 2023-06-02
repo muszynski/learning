@@ -12,7 +12,7 @@ struct Blik: View {
         VStack (alignment: .leading) {
             //TODO: wyrownaj do lewej
             Text("Bezpośrednio BLIKiem na nr.:")
-                .padding(.bottom, -15)
+                .padding(.bottom, -10)
                 .font(.custom("SantanderText-Light", size: 14))
                 .offset(x: 15)
             HStack {

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0A37D32A29EE37006F7A36 /* DonationFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A37D22A29EE37006F7A36 /* DonationFormView.swift */; };
 		CD1916272A2385B800203347 /* CoreDataTestCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1916262A2385B800203347 /* CoreDataTestCategoryView.swift */; };
 		CD1916292A238F0C00203347 /* AnimatedLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1916282A238F0C00203347 /* AnimatedLogo.swift */; };
 		CD19162B2A23BB1000203347 /* CoreDataThumbTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD19162A2A23BB1000203347 /* CoreDataThumbTestView.swift */; };
+		CD35BDD12A28CAC3002542D5 /* PaymentURLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35BDD02A28CAC3002542D5 /* PaymentURLGenerator.swift */; };
+		CD35BDD42A28CC5A002542D5 /* PaymentsLinkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35BDD32A28CC5A002542D5 /* PaymentsLinkTest.swift */; };
 		CD4702292A2675DB00A0EA24 /* TextProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4702282A2675DB00A0EA24 /* TextProcessor.swift */; };
 		CD47022C2A26777900A0EA24 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = CD47022B2A26777900A0EA24 /* SwiftSoup */; };
 		CD47022E2A2678EF00A0EA24 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47022D2A2678EF00A0EA24 /* TestTextView.swift */; };
@@ -77,9 +80,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD0A37D22A29EE37006F7A36 /* DonationFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFormView.swift; sourceTree = "<group>"; };
 		CD1916262A2385B800203347 /* CoreDataTestCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestCategoryView.swift; sourceTree = "<group>"; };
 		CD1916282A238F0C00203347 /* AnimatedLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLogo.swift; sourceTree = "<group>"; };
 		CD19162A2A23BB1000203347 /* CoreDataThumbTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataThumbTestView.swift; sourceTree = "<group>"; };
+		CD35BDD02A28CAC3002542D5 /* PaymentURLGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentURLGenerator.swift; sourceTree = "<group>"; };
+		CD35BDD32A28CC5A002542D5 /* PaymentsLinkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsLinkTest.swift; sourceTree = "<group>"; };
 		CD4702282A2675DB00A0EA24 /* TextProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextProcessor.swift; sourceTree = "<group>"; };
 		CD47022D2A2678EF00A0EA24 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
 		CD5276352A25D36200A4CD23 /* Authors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authors.swift; sourceTree = "<group>"; };
@@ -160,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD35BDD22A28CC41002542D5 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				CD35BDD02A28CAC3002542D5 /* PaymentURLGenerator.swift */,
+				CD35BDD32A28CC5A002542D5 /* PaymentsLinkTest.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
 		CD6373142A16B12E005476EB /* DataJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +245,7 @@
 		CDAF79F72A14E61400F4976C /* FundacjaSantanderDesign */ = {
 			isa = PBXGroup;
 			children = (
+				CD35BDD22A28CC41002542D5 /* Payments */,
 				CDF817142A1B600300FB1461 /* Network */,
 				CD6373252A1784DC005476EB /* Extension */,
 				CD63731B2A176CCD005476EB /* Model */,
@@ -352,6 +368,7 @@
 				CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */,
 				CD8463AB2A24EC9D00323C8A /* FormElement.swift */,
 				CD8463AD2A250DE200323C8A /* DonationForms.swift */,
+				CD0A37D22A29EE37006F7A36 /* DonationFormView.swift */,
 			);
 			path = DonationForm;
 			sourceTree = "<group>";
@@ -483,6 +500,7 @@
 				CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */,
 				CD6C411F2A20E5040028A2BC /* LoadingScreen.swift in Sources */,
 				CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */,
+				CD35BDD12A28CAC3002542D5 /* PaymentURLGenerator.swift in Sources */,
 				CD8463AE2A250DE200323C8A /* DonationForms.swift in Sources */,
 				CDAF7A0C2A14ECFF00F4976C /* PomagajView.swift in Sources */,
 				CD1916272A2385B800203347 /* CoreDataTestCategoryView.swift in Sources */,
@@ -494,6 +512,7 @@
 				CDBBCCC32A1D1EAB0038718E /* PostQuery.swift in Sources */,
 				CD57910A2A1D47B800E53902 /* WordPressAPI.swift in Sources */,
 				CD8463AC2A24EC9D00323C8A /* FormElement.swift in Sources */,
+				CD35BDD42A28CC5A002542D5 /* PaymentsLinkTest.swift in Sources */,
 				CD5276362A25D36200A4CD23 /* Authors.swift in Sources */,
 				CD6373162A16B157005476EB /* WordpressJSONstruct.swift in Sources */,
 				CD63732B2A1786EF005476EB /* SaveCoreData.swift in Sources */,
@@ -509,6 +528,7 @@
 				CDF967AE2A1DF75E00DC1722 /* DataManager.swift in Sources */,
 				CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */,
 				CDAF79FB2A14E61400F4976C /* MainView.swift in Sources */,
+				CD0A37D32A29EE37006F7A36 /* DonationFormView.swift in Sources */,
 				CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */,
 				CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */,
 				CD6373352A17A59E005476EB /* SafariView.swift in Sources */,
@@ -645,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -664,7 +684,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
+				MARKETING_VERSION = 1.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -682,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -701,7 +721,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
+				MARKETING_VERSION = 1.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
