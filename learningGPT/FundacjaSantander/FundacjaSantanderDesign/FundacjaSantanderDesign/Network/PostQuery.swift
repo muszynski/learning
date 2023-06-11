@@ -92,7 +92,8 @@ class PostQuery : ObservableObject {
                     error = fetchError
                     completion(nil, error)
                 } else if let posts = posts {
-                    allPosts.append(contentsOf: posts)
+                    let newPosts = posts.filter { !self.isPostStoredInCoreData(postId: Int($0.id)) }
+                    allPosts.append(contentsOf: newPosts)
                 }
                 
                 if currentPage == totalRequests {
@@ -101,6 +102,7 @@ class PostQuery : ObservableObject {
             }
         }
     }
+
     // Ta metoda sprawdza, czy są już jakieś posty zapisane w Core Data.
     func arePostsStoredInCoreData() -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
@@ -143,6 +145,7 @@ class PostQuery : ObservableObject {
 
                     for post in posts {
                         group.enter()
+                        print("Fetching thumbnail for post with id \(post.id) from URL: \(post.thumbnails)") // Dodajemy log tutaj
                         self.imageProcessor.fetchAndSaveThumbnail(thumbnail: post.thumbnails, postId: Int(post.id), context: self.context) { error in
                             if let error = error {
                                 print("Failed to fetch and save thumbnail for post with id \(post.id): \(error)")

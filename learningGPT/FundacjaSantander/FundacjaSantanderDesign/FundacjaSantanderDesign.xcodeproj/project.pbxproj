@@ -31,6 +31,7 @@
 		CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373382A17B938005476EB /* GetCategoryName.swift */; };
 		CD6C411A2A209B830028A2BC /* ProjektyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C41192A209B830028A2BC /* ProjektyView.swift */; };
 		CD6C411F2A20E5040028A2BC /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C411E2A20E5040028A2BC /* LoadingScreen.swift */; };
+		CD7D45862A35FBA70015AADF /* CountPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D45852A35FBA70015AADF /* CountPost.swift */; };
 		CD7DE5512A18BC22007DD036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DE5502A18BC22007DD036 /* GlobalVariable.swift */; };
 		CD7FC8122A24D11A008B26A4 /* FaqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FC8112A24D11A008B26A4 /* FaqService.swift */; };
 		CD7FC8142A24D449008B26A4 /* FaqList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FC8132A24D449008B26A4 /* FaqList.swift */; };
@@ -104,6 +105,7 @@
 		CD6373382A17B938005476EB /* GetCategoryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryName.swift; sourceTree = "<group>"; };
 		CD6C41192A209B830028A2BC /* ProjektyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjektyView.swift; sourceTree = "<group>"; };
 		CD6C411E2A20E5040028A2BC /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		CD7D45852A35FBA70015AADF /* CountPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPost.swift; sourceTree = "<group>"; };
 		CD7DE5502A18BC22007DD036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		CD7FC8112A24D11A008B26A4 /* FaqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqService.swift; sourceTree = "<group>"; };
 		CD7FC8132A24D449008B26A4 /* FaqList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqList.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				CD63731F2A17751C005476EB /* StatusView.swift */,
 				CD1916282A238F0C00203347 /* AnimatedLogo.swift */,
 				CDA95DD82A24B7810043AE8B /* LinkImageView.swift */,
+				CD7D45852A35FBA70015AADF /* CountPost.swift */,
 			);
 			path = "Title and Footer";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */,
 				CD6373352A17A59E005476EB /* SafariView.swift in Sources */,
 				CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */,
+				CD7D45862A35FBA70015AADF /* CountPost.swift in Sources */,
 				CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */,
 				CDC560472A25C38F00AF6582 /* PostDetailView.swift in Sources */,
 				CD19162B2A23BB1000203347 /* CoreDataThumbTestView.swift in Sources */,
@@ -665,7 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -684,7 +688,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.19;
+				MARKETING_VERSION = 1.0.20;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -702,7 +706,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -721,7 +725,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.19;
+				MARKETING_VERSION = 1.0.20;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

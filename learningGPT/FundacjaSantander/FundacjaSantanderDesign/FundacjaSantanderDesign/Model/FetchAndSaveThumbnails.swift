@@ -18,16 +18,29 @@ class ImageProcessor {
 
         doesThumbnailExist(postId: postId, context: privateContext) { (exists, error) in
             if exists || error != nil {
-                print("Thumbnail already exists or there was an error: \(String(describing: error))")
-                completion(CoreDataError.fetchingError)
+                print("Thumbnail already exists or there was an error for post with id \(postId): \(String(describing: error))")
+                completion(error ?? CoreDataError.fetchingError)
                 return
             }
 
             switch thumbnail {
+            
+                
             case .string(let urlString):
-                self.fetchImageData(from: urlString) { (data, error) in
+                let validUrlString = urlString.replacingOccurrences(of: "×", with: "x")
+                self.fetchImageData(from: validUrlString) { (data, error) in
+                    if let error = error {
+                        print("Error fetching image data for post with id \(postId) from URL: \(validUrlString): \(String(describing: error))")
+                        completion(NetworkError.fetchingError)
+                        return
+                    }
+                    
+                    if let error = error {
+                        print("Error fetching image data for post with id \(postId) from URL: \(urlString): \(String(describing: error))")
+                        completion(NetworkError.fetchingError)
+                        return
+                    }
                     guard let data = data else {
-                        print("Error fetching image data: \(String(describing: error))")
                         completion(NetworkError.fetchingError)
                         return
                     }
@@ -48,10 +61,10 @@ class ImageProcessor {
                                 } else {
                                     self.saveChanges(context: context) { error in
                                         if let error = error {
-                                            print("Failed to save main context:", error)
+                                            print("Failed to save main context for post with id \(postId):", error)
                                             completion(error)
                                         } else {
-                                            print("Thumbnail saved successfully.")
+                                            print("Thumbnail for post with id \(postId) saved successfully.")
                                             completion(nil)
                                         }
                                     }
@@ -67,6 +80,7 @@ class ImageProcessor {
             }
         }
     }
+
     
     
     func saveThumbnail(postId: Int, imageData: Data, context: NSManagedObjectContext, completion: @escaping (Error?) -> Void) {
@@ -107,12 +121,17 @@ class ImageProcessor {
         fetchRequest.predicate = NSPredicate(format: "postId == %@", NSNumber(value: postId))
         do {
             let fetchedThumbnails = try context.fetch(fetchRequest)
+            if !fetchedThumbnails.isEmpty {
+                print("Thumbnail for post with id \(postId) already exists.")
+            }
             completion(!fetchedThumbnails.isEmpty, nil)
         } catch {
             print("Failed to fetch existing thumbnail:", error)
             completion(false, CoreDataError.fetchingError)
         }
     }
+
+
     
     func fetchImageData(from urlStr: String, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: urlStr) else {
@@ -131,21 +150,44 @@ class ImageProcessor {
         }.resume()
     }
     
+//    func resizeImageData(_ data: Data, toWidth targetWidth: CGFloat) -> Data? {
+//        guard let image = UIImage(data: data) else {
+//            print("Failed to load image from data") // Dodajemy log tutaj
+//            return nil
+//        }
+//
+//        let aspectRatio = image.size.height / image.size.width
+//        let targetSize = CGSize(width: targetWidth, height: targetWidth * aspectRatio)
+//
+//        UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main.scale)
+//        image.draw(in: CGRect(origin: .zero, size: targetSize))
+//        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//
+//        return resizedImage?.jpegData(compressionQuality: 1.0)
+//    }
+    
     func resizeImageData(_ data: Data, toWidth targetWidth: CGFloat) -> Data? {
         guard let image = UIImage(data: data) else {
+            print("Failed to load image from data") // Dodajemy log tutaj
             return nil
         }
-        
+
         let aspectRatio = image.size.height / image.size.width
         let targetSize = CGSize(width: targetWidth, height: targetWidth * aspectRatio)
-        
+
         UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main.scale)
         image.draw(in: CGRect(origin: .zero, size: targetSize))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        guard let resizedImage = UIGraphicsGetImageFromCurrentImageContext() else {
+            print("Failed to resize image") // Dodajemy log tutaj
+            UIGraphicsEndImageContext()
+            return nil
+        }
         UIGraphicsEndImageContext()
-        
-        return resizedImage?.jpegData(compressionQuality: 1.0)
+
+        return resizedImage.jpegData(compressionQuality: 1.0)
     }
+
     
     
     func saveChanges(context: NSManagedObjectContext, completion: @escaping (Error?) -> Void) {

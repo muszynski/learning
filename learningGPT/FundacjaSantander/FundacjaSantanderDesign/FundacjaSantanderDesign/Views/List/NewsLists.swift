@@ -16,17 +16,20 @@ struct NewsLists: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Post.date, ascending: false)],
         animation: .default)
     private var posts: FetchedResults<Post>
-
+    
     var body: some View {
-        LazyVStack {
-            ForEach(posts, id: \.self) { post in
-                if isCategoryEight(post: post) {
-                    let newsItem = NewsItem(imageData: post.postToThumb?.imageData,
-                                            title: post.title ?? "",
-                                            content: post.content ?? "",
-                                            datePublication: formattedDateDayMontYear(from: post.date ?? Date()))
-                    NavigationLink(destination: PostDetailView(post: post)) {
-                        getNewsItemView(newsItem: newsItem)
+        VStack {
+            CountPost(countPost: countCategoryEightPosts(), postUpdated: 0, postThumb: 0) // Tutaj używamy komponentu CountPost
+            LazyVStack {
+                ForEach(posts, id: \.self) { post in
+                    if isCategoryEight(post: post) {
+                        let newsItem = NewsItem(imageData: post.postToThumb?.imageData,
+                                                title: post.title ?? "",
+                                                content: post.content ?? "",
+                                                datePublication: formattedDateDayMontYear(from: post.date ?? Date()))
+                        NavigationLink(destination: PostDetailView(post: post)) {
+                            getNewsItemView(newsItem: newsItem)
+                        }
                     }
                 }
             }
@@ -40,6 +43,10 @@ struct NewsLists: View {
         return false
     }
 
+    private func countCategoryEightPosts() -> Int {
+        return posts.filter { isCategoryEight(post: $0) }.count
+    }
+
     private func getNewsItemView(newsItem: NewsItem) -> some View {
         newsItem
             .padding(.top)
@@ -51,6 +58,7 @@ struct NewsLists_Previews: PreviewProvider {
         NewsLists()
     }
 }
+
 
 
 
