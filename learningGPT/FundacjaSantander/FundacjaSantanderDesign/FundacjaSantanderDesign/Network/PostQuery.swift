@@ -11,10 +11,10 @@ import CoreData
 class PostQuery : ObservableObject {
     
     var totalPosts: Int = 0
-    var totalPages: Int = 0 // Dodaj to tutaj
-    var postsPerPage: Int = 50 // zainicjuj z domyślną wartością
+    var totalPages: Int = 0
+    var postsPerPage: Int = 20
     var context = PersistenceController.shared.container.viewContext
-    var wordpressApi = WordPressAPI() // Załóżmy, że WordPressAPI jest dostępne i zainicjalizowane.
+    var wordpressApi = WordPressAPI()
     let imageProcessor = ImageProcessor()
     
     func fetchWPHeaders(completion: @escaping (Error?) -> Void) {
@@ -32,10 +32,6 @@ class PostQuery : ObservableObject {
                 print("HTTP response status code: \(httpResponse.statusCode)")
                 print("HTTP response headers: \(httpResponse.allHeaderFields)")
             }
-            
-//            if let data = data {
-//                print("Received data.") \(String(decoding: data, as: UTF8.self))") // This assumes the data is UTF-8 encoded text
-//            }
             
             let headers = self.getWPHeaders(from: response)
             self.totalPosts = headers.total ?? 1
@@ -168,29 +164,6 @@ class PostQuery : ObservableObject {
             }
         }
     }
-
-    
-//    func fetchAndSavePosts(pageNumber: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
-//        wordpressApi.fetchPosts(pageNumber: pageNumber) { (result: Result<([WordpressPost], URLResponse?), NetworkError>) in
-//            switch result {
-//            case .success(let (posts, _)):
-//                savePostsToCoreData(posts: posts) { error in
-//                    if let error = error {
-//                        print("Failed to save posts on page \(pageNumber):", error)
-//                        completion(nil, error)
-//                    } else {
-//                        print("Posts on page \(pageNumber) saved successfully. Total posts: \(posts.count)")
-//                        completion(posts, nil)
-//                    }
-//                }
-//            case .failure(let error):
-//                print("Failed to fetch posts on page \(pageNumber):", error)
-//                completion(nil, error)
-//            }
-//        }
-//    }
-
-    
     // Metoda isPostStoredInCoreData() musi być zdefiniowana w klasie PostQuery.
     func isPostStoredInCoreData(postId: Int) -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()

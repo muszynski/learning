@@ -73,7 +73,7 @@
 		CDAF7A3D2A15531100F4976C /* DonationBannerForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */; };
 		CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3E2A15595A00F4976C /* Blik.swift */; };
 		CDBBCCC32A1D1EAB0038718E /* PostQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */; };
-		CDC560472A25C38F00AF6582 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC560462A25C38F00AF6582 /* NewsDetailView.swift */; };
+		CDC560472A25C38F00AF6582 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC560462A25C38F00AF6582 /* PostDetailView.swift */; };
 		CDF817132A1B475300FB1461 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817122A1B475300FB1461 /* CategoriesService.swift */; };
 		CDF817162A1B603C00FB1461 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817152A1B603C00FB1461 /* Error.swift */; };
 		CDF967AE2A1DF75E00DC1722 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF967AD2A1DF75E00DC1722 /* DataManager.swift */; };
@@ -146,7 +146,7 @@
 		CDAF7A3C2A15531100F4976C /* DonationBannerForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationBannerForm.swift; sourceTree = "<group>"; };
 		CDAF7A3E2A15595A00F4976C /* Blik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blik.swift; sourceTree = "<group>"; };
 		CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostQuery.swift; sourceTree = "<group>"; };
-		CDC560462A25C38F00AF6582 /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
+		CDC560462A25C38F00AF6582 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		CDF817122A1B475300FB1461 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		CDF817152A1B603C00FB1461 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		CDF967AD2A1DF75E00DC1722 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 		CDC560432A25BD4000AF6582 /* PostPage */ = {
 			isa = PBXGroup;
 			children = (
-				CDC560462A25C38F00AF6582 /* NewsDetailView.swift */,
+				CDC560462A25C38F00AF6582 /* PostDetailView.swift */,
 			);
 			path = PostPage;
 			sourceTree = "<group>";
@@ -534,7 +534,7 @@
 				CD6373352A17A59E005476EB /* SafariView.swift in Sources */,
 				CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */,
 				CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */,
-				CDC560472A25C38F00AF6582 /* NewsDetailView.swift in Sources */,
+				CDC560472A25C38F00AF6582 /* PostDetailView.swift in Sources */,
 				CD19162B2A23BB1000203347 /* CoreDataThumbTestView.swift in Sources */,
 				CD47022E2A2678EF00A0EA24 /* TestTextView.swift in Sources */,
 				CDF817162A1B603C00FB1461 /* Error.swift in Sources */,
@@ -665,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -684,7 +684,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.18;
+				MARKETING_VERSION = 1.0.19;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -702,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -721,7 +721,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.18;
+				MARKETING_VERSION = 1.0.19;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

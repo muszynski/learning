@@ -25,7 +25,7 @@ struct NewsLists: View {
                                             title: post.title ?? "",
                                             content: post.content ?? "",
                                             datePublication: formattedDateDayMontYear(from: post.date ?? Date()))
-                    NavigationLink(destination: NewsDetailView(post: post)) {
+                    NavigationLink(destination: PostDetailView(post: post)) {
                         getNewsItemView(newsItem: newsItem)
                     }
                 }

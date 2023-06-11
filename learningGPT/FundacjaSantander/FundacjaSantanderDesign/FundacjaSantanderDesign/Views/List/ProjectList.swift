@@ -18,53 +18,45 @@ struct ProjectList: View {
         animation: .default)
     private var posts: FetchedResults<Post>
 
-    @State private var showSafariView = false // State variable to control SafariView presentation
-    @State private var selectedLink: URL? = nil // State variable to hold selected link
-    
     var body: some View {
-           ScrollView {
-               LazyVStack {
-                   ForEach(posts.filter { post in
-                       if let categoryArray = post.categories as? [Int] {
-                           return categoryArray.contains(where: { $0 == 5 || $0 == 6 })
-                       }
-                       return false
-                   }, id: \.self) { post in
-                       if let categoryArray = post.categories as? [Int] {
-                           let categoryNamesString = getCategoryNamesFromIds(categoryArray)
-                           if let date = post.date {
-                               let formattedDate = formattedDateDayMontYear(from: date)
-                               let imageData = post.postToThumb?.imageData
-                               let projectItem = ProjectItem(imageData: imageData,
-                                                             title: post.title ?? "",
-                                                             content: post.content ?? "",
-                                                             categoryName: categoryNamesString,
-                                                             link: post.link ?? "",
-                                                             datePublication: formattedDate)
-                               getProjectItemView(projectItem: projectItem, post: post)
-                           }
-                       }
-                   }
-               }
-           }
-       }
+        ScrollView {
+            LazyVStack {
+                ForEach(posts.filter { post in
+                    if let categoryArray = post.categories as? [Int] {
+                        return categoryArray.contains(where: { $0 == 5 || $0 == 6 })
+                    }
+                    return false
+                }, id: \.self) { post in
+                    if let categoryArray = post.categories as? [Int] {
+                        let categoryNamesString = getCategoryNamesFromIds(categoryArray)
+                        if let date = post.date {
+                            let formattedDate = formattedDateDayMontYear(from: date)
+                            let imageData = post.postToThumb?.imageData
+                            let projectItem = ProjectItem(imageData: imageData,
+                                                          title: post.title ?? "",
+                                                          content: post.content ?? "",
+                                                          categoryName: categoryNamesString,
+                                                          link: post.link ?? "",
+                                                          datePublication: formattedDate)
+                            NavigationLink(destination: PostDetailView(post: post)) {
+                                getProjectItemView(projectItem: projectItem)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-       private func getProjectItemView(projectItem: ProjectItem, post: Post) -> some View {
-           projectItem
-               .padding(.top)
-               .onTapGesture {
-                   selectedLink = URL(string: post.link ?? "")
-                   showSafariView = true
-               }
-               .sheet(isPresented: $showSafariView) {
-                   SafariView(url: selectedLink ?? URL(string: "https://fundacja.santander.pl")!) // Example URL as fallback
-               }
-       }
+    private func getProjectItemView(projectItem: ProjectItem) -> some View {
+        projectItem
+            .padding(.top)
+    }
 
-       private func getCategoryNamesFromIds(_ ids: [Int]) -> String {
-           let categoryNames = ids.compactMap { categoriesService.getCategoryName(id: Int16($0), from: viewContext) }
-           return categoryNames.joined(separator: ", ")
-       }
+    private func getCategoryNamesFromIds(_ ids: [Int]) -> String {
+        let categoryNames = ids.compactMap { categoriesService.getCategoryName(id: Int16($0), from: viewContext) }
+        return categoryNames.joined(separator: ", ")
+    }
 }
 
 
@@ -73,5 +65,3 @@ struct ProjectList_Previews: PreviewProvider {
         ProjectList()
     }
 }
-
-

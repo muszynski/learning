@@ -9,18 +9,17 @@ import SwiftUI
 import CoreData
 
 struct ProjektyView: View {
-    
     var body: some View {
-        VStack {
-            Title(title: "Projekty i programy")
-            ProjectList()
+        NavigationView {
+            VStack {
+                Title(title: "Projekty i programy")
+                ProjectList()
+            }
         }
     }
-    
-    
+}
     struct ProjektyView_Previews: PreviewProvider {
         static var previews: some View {
             ProjektyView()
         }
     }
-}

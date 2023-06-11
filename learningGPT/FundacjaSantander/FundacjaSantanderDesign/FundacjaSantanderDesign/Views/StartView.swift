@@ -9,21 +9,23 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        
-        ScrollView(showsIndicators: false) {
-            StatusView(status: .idle)
-            VStack{
-                WelcomeBanner()
-                Spacer()
-                    .frame(height: 170)
-                DonationBanner()
-                ProjectList()
-                    .padding(.bottom)
-                ContactInfo()
+        NavigationView {
+            ScrollView(showsIndicators: false) {
+                StatusView(status: .idle)
+                VStack{
+                    WelcomeBanner()
+                    Spacer()
+                        .frame(height: 170)
+                    DonationBanner()
+                    ProjectList()
+                        .padding(.bottom)
+                    ContactInfo()
+                }
             }
         }
     }
 }
+
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {

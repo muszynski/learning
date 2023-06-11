@@ -8,10 +8,12 @@
 import SwiftUI
 import CoreData
 
-struct NewsDetailView: View {
+struct PostDetailView: View {
     let post: Post
-    
     var body: some View {
+        
+        let postTitle = String(post.title ?? "Fundacja Santander")
+        
         ScrollView {
             VStack(alignment: .leading) {
                 if let thumb = post.postToThumb, let imageData = thumb.imageData {
@@ -55,7 +57,7 @@ struct NewsDetailView: View {
         .onAppear {
             print("Author ID from CoreData: \(post.author)") // Print to console
         }
-        .navigationTitle("Aktualności")
+        .navigationTitle(postTitle)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -77,7 +79,7 @@ struct NewsDetailView_Previews: PreviewProvider {
         postMock.postToThumb = thumbMock
         postMock.author = Int16(Author.Jola.rawValue)
 
-        return NewsDetailView(post: postMock)
+        return PostDetailView(post: postMock)
     }
 }
 

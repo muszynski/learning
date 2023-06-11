@@ -236,7 +236,7 @@ struct SelectButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.custom("SantanderText-Bold", size: 14))
-            .padding(.horizontal, 22)
+            .padding(.horizontal, 18)
             .padding(.vertical, 10)
             .background(isSelected ? Color("santanderRed") : Color.gray)
             .foregroundColor(.white)
