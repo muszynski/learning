@@ -9,17 +9,19 @@ import Foundation
 import CoreData
 
 class DataManager : ObservableObject {
+
     
     let context: NSManagedObjectContext
-    let categoriesService = CategoriesService()
-    let postsQuery = PostQuery()
-    let imageProcessor = ImageProcessor()
-    let faqAPI = WordPressAPI()
-    let faqService = FaqService()
-    
-    init(context: NSManagedObjectContext) {
-        self.context = context
-    }
+     let categoriesService = CategoriesService()
+     let postsQuery: PostQuery
+     let imageProcessor = ImageProcessor()
+     let faqAPI = WordPressAPI()
+     let faqService = FaqService()
+     
+     init(context: NSManagedObjectContext, postQuery: PostQuery) {
+         self.context = context
+         self.postsQuery = postQuery
+     }
     
     func fetchAndUpdateData(postsPerPage: Int, completion: @escaping (Error?) -> Void) {
         postsQuery.fetchWPHeaders { [weak self] error in
@@ -49,17 +51,7 @@ class DataManager : ObservableObject {
                             completion(error)
                             return
                         }
-                        //MARK: magia (PONIZEJ DO LINII 59 BYLO ZAKOMENTOWANE
-//                         self?.fetchAndSaveThumbnails { error in
-//                            if let error = error {
-//                                print("Failed to fetch and save thumbnails: \(error.localizedDescription)")
-//                                completion(error)
-//                                return
-//                            }
-//
-//                            print("Posts, FAQs and thumbnails updated successfully.")
-//                            completion(nil)
-//                        }
+
                         
                         print("Posts and FAQs updated successfully.")
                         completion(nil)
@@ -82,7 +74,35 @@ class DataManager : ObservableObject {
     }
     
     private var lastProcessedPostId: Int = 0
-    //MARK: to zostało zakomentowane żeby uniknąć duplikacji funkcji która jest w ImageProcessor i ma taką samą nazwę
+
+    
+    
+    
+    func checkIfDataLoaded() -> Bool {
+        let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
+        do {
+            let count = try context.count(for: fetchRequest)
+            return count > 0
+        } catch {
+            print("Failed to fetch posts count: \(error)")
+            return false
+        }
+    }
+}
+
+//MARK: magia (PONIZEJ DO LINII 59 BYLO ZAKOMENTOWANE
+//                         self?.fetchAndSaveThumbnails { error in
+//                            if let error = error {
+//                                print("Failed to fetch and save thumbnails: \(error.localizedDescription)")
+//                                completion(error)
+//                                return
+//                            }
+//
+//                            print("Posts, FAQs and thumbnails updated successfully.")
+//                            completion(nil)
+//                        }
+
+//MARK: to zostało zakomentowane żeby uniknąć duplikacji funkcji która jest w ImageProcessor i ma taką samą nazwę
 //    private func fetchAndSaveThumbnails(completion: @escaping (Error?) -> Void) {
 //        let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
 //        fetchRequest.predicate = NSPredicate(format: "idPost > %d", lastProcessedPostId)
@@ -107,20 +127,6 @@ class DataManager : ObservableObject {
 //            completion(error)
 //        }
 //    }
-    
-    
-    
-    func checkIfDataLoaded() -> Bool {
-        let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
-        do {
-            let count = try context.count(for: fetchRequest)
-            return count > 0
-        } catch {
-            print("Failed to fetch posts count: \(error)")
-            return false
-        }
-    }
-}
 
 //    func fetchAndUpdateData(postsPerPage: Int, completion: @escaping (Error?) -> Void) {
 //        postsQuery.fetchWPHeaders { [weak self] error in

@@ -11,11 +11,22 @@ import CoreData
 struct LoadingScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var dataLoaded = false
-    @StateObject private var dataManager = DataManager(context: PersistenceController.shared.container.viewContext)
+    @StateObject var postQuery = PostQuery()
+    @StateObject private var dataManager: DataManager
     @State private var loadingStatus: Status = .loading
+
+    init() {
+        let postQuery = PostQuery()
+        _postQuery = StateObject(wrappedValue: postQuery)
+        _dataManager = StateObject(wrappedValue: DataManager(context: PersistenceController.shared.container.viewContext, postQuery: postQuery))
+    }
 
     var body: some View {
         VStack {
+            Text("\(postQuery.fetchedPostsCount) / \(postQuery.totalPosts) posts fetched")
+                .font(.custom("SantanderText-Regular", size: 13))
+                .foregroundColor(Color("fontGray"))
+            
             if loadingStatus == .loading {
                 AnimatedLogo()
                     .frame(width: 128, height: 128)
@@ -24,7 +35,7 @@ struct LoadingScreen: View {
         }
         .onAppear {
             loadingStatus = .loading
-            dataManager.fetchAndUpdateData(postsPerPage: 50) { error in
+            dataManager.fetchAndUpdateData(postsPerPage: postPerPage) { error in
                 if let error = error {
                     print("Failed to fetch and update data: \(error.localizedDescription)")
                     loadingStatus = .serverError
@@ -46,12 +57,14 @@ struct LoadingScreen: View {
 
 struct LoadingScreen_Previews: PreviewProvider {
     static var previews: some View {
+        let postQuery = PostQuery()
         LoadingScreen()
             .previewLayout(.device)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .onAppear {
-                DataManager(context: PersistenceController.preview.container.viewContext)
+                DataManager(context: PersistenceController.preview.container.viewContext, postQuery: postQuery)
                     .fetchAndUpdateData(postsPerPage: 50) { _ in }
             }
     }
 }
+

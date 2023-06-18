@@ -16,6 +16,7 @@ class PostQuery : ObservableObject {
     var context = PersistenceController.shared.container.viewContext
     var wordpressApi = WordPressAPI()
     let imageProcessor = ImageProcessor()
+    @Published var fetchedPostsCount: Int = 0
     
     func fetchWPHeaders(completion: @escaping (Error?) -> Void) {
         // Replace with your actual API URL
@@ -102,7 +103,7 @@ class PostQuery : ObservableObject {
             }
         }
     }
-
+    
     // Ta metoda sprawdza, czy są już jakieś posty zapisane w Core Data.
     func arePostsStoredInCoreData() -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
@@ -127,7 +128,7 @@ class PostQuery : ObservableObject {
             }
         }
     }
-
+    
     func fetchAndSavePosts(pageNumber: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
         wordpressApi.fetchPosts(pageNumber: pageNumber) { (result: Result<([WordpressPost], URLResponse?), NetworkError>) in
             switch result {
@@ -140,22 +141,24 @@ class PostQuery : ObservableObject {
                     } else {
                         print("Posts on page \(pageNumber) saved successfully. Total posts: \(posts.count)")
                     }
-
+                    
                     let group = DispatchGroup()
-
+                    
                     for post in posts {
                         group.enter()
-                        print("Fetching thumbnail for post with id \(post.id) from URL: \(post.thumbnails)") // Dodajemy log tutaj
                         self.imageProcessor.fetchAndSaveThumbnail(thumbnail: post.thumbnails, postId: Int(post.id), context: self.context) { error in
                             if let error = error {
                                 print("Failed to fetch and save thumbnail for post with id \(post.id): \(error)")
                             } else {
                                 print("Thumbnail for post with id \(post.id) fetched and saved successfully.")
+                                DispatchQueue.main.async {
+                                    self.fetchedPostsCount += 1 // Aktualizacja ilości pobranych postów
+                                }
                             }
                             group.leave()
                         }
                     }
-
+                    
                     group.notify(queue: .main) {
                         print("All thumbnails fetched and saved.")
                         completion(posts, nil)
@@ -167,6 +170,8 @@ class PostQuery : ObservableObject {
             }
         }
     }
+
+    
     // Metoda isPostStoredInCoreData() musi być zdefiniowana w klasie PostQuery.
     func isPostStoredInCoreData(postId: Int) -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
