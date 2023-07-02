@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G531" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G651" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Categories" representedClassName="Categories" syncable="YES" codeGenerationType="class">
         <attribute name="catId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="idCategory" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -31,9 +31,28 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="postToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumb" inverseName="postToThumb" inverseEntity="Thumb"/>
     </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="categories" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="excerpt" optional="YES" attributeType="String"/>
+        <attribute name="idProject" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="projectId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="slug" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
+        <attribute name="thumbnails" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="projectToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumb" inverseName="projectToThumb" inverseEntity="Thumb"/>
+    </entity>
     <entity name="Thumb" representedClassName="Thumb" syncable="YES" codeGenerationType="class">
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="postId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="postToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="postToThumb" inverseEntity="Post"/>
+        <relationship name="projectToThumb" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="projectToThumb" inverseEntity="Project"/>
     </entity>
 </model>

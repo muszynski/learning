@@ -16,21 +16,28 @@ struct FAQView: View {
     ) var faqs: FetchedResults<Faq>
     
     var body: some View {
-        ScrollView {
-            VStack {
-                Title(title: "FAQ")
+        
+        NavigationView {
+            ScrollView {
+                BigHeader(headerType: .faq)
+                    
                 VStack {
-                    ForEach(faqs) { faq in
-                        FaqItem(title: faq.faqTitle ?? "Tytuł", content: faq.faqContent ?? "Treść")
+                   
+                    VStack {
+                        ForEach(faqs) { faq in
+                            FaqItem(title: faq.faqTitle ?? "Tytuł", content: faq.faqContent ?? "Treść")
+                        }
+    //                    TestTextView()
+    //                   PaymentsLinkTest()
                     }
-//                    TestTextView()
-//                   PaymentsLinkTest()
+                    .padding()
+                    ContactInfo()
+    //                CategoriesView()
+    //                TestTextView()
                 }
-                .padding()
-                ContactInfo()
-//                CategoriesView()
-//                TestTextView()
             }
+            .edgesIgnoringSafeArea(.top) // dodane, aby zignorować bezpieczne obszary dla ScrollView
+            .navigationViewStyle(StackNavigationViewStyle()) // dodane, aby usunąć domyślne marginesy NavigationView
         }
     }
 }
@@ -42,4 +49,3 @@ struct FAQView_Previews: PreviewProvider {
         FAQView()
     }
 }
-

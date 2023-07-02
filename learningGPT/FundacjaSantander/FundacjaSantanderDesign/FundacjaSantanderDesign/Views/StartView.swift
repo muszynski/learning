@@ -15,14 +15,16 @@ struct StartView: View {
                 VStack{
                     WelcomeBanner()
                     Spacer()
-                        .frame(height: 170)
+                        .frame(height: 24)
                     DonationBanner()
+                    NewsBanner()
                     ProjectList()
                         .padding(.bottom)
-                    ContactInfo()
+//                    ContactInfo()
                 }
             }
         }
+        .background(Color("bgGray"))
     }
 }
 

@@ -11,7 +11,6 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
-    // Dodaj tę linię
     static let preview = PersistenceController(inMemory: true)
 
     let container: NSPersistentContainer

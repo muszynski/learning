@@ -29,6 +29,7 @@
 		CD6373352A17A59E005476EB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373342A17A59E005476EB /* SafariView.swift */; };
 		CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373362A17AF9D005476EB /* ImageHolder.swift */; };
 		CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6373382A17B938005476EB /* GetCategoryName.swift */; };
+		CD697BF72A51D3A6009460EC /* BigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD697BF62A51D3A6009460EC /* BigHeader.swift */; };
 		CD6C411A2A209B830028A2BC /* ProjektyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C41192A209B830028A2BC /* ProjektyView.swift */; };
 		CD6C411F2A20E5040028A2BC /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C411E2A20E5040028A2BC /* LoadingScreen.swift */; };
 		CD7D45862A35FBA70015AADF /* CountPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D45852A35FBA70015AADF /* CountPost.swift */; };
@@ -37,6 +38,7 @@
 		CD7FC8142A24D449008B26A4 /* FaqList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FC8132A24D449008B26A4 /* FaqList.swift */; };
 		CD8463AC2A24EC9D00323C8A /* FormElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8463AB2A24EC9D00323C8A /* FormElement.swift */; };
 		CD8463AE2A250DE200323C8A /* DonationForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8463AD2A250DE200323C8A /* DonationForms.swift */; };
+		CD8FF1262A5186D5009B0DAF /* NewsBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FF1252A5186D5009B0DAF /* NewsBanner.swift */; };
 		CD9ED3B02A161D6D008F23D0 /* PaymentSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */; };
 		CD9ED3B32A162BD4008F23D0 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B22A162BD4008F23D0 /* ContactInfo.swift */; };
 		CD9ED3B52A163274008F23D0 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9ED3B42A163274008F23D0 /* Title.swift */; };
@@ -75,6 +77,7 @@
 		CDAF7A3F2A15595A00F4976C /* Blik.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF7A3E2A15595A00F4976C /* Blik.swift */; };
 		CDBBCCC32A1D1EAB0038718E /* PostQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */; };
 		CDC560472A25C38F00AF6582 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC560462A25C38F00AF6582 /* PostDetailView.swift */; };
+		CDDF1C1D2A5208DD00B55E57 /* ButtonLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDF1C1C2A5208DD00B55E57 /* ButtonLink.swift */; };
 		CDF817132A1B475300FB1461 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817122A1B475300FB1461 /* CategoriesService.swift */; };
 		CDF817162A1B603C00FB1461 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF817152A1B603C00FB1461 /* Error.swift */; };
 		CDF967AE2A1DF75E00DC1722 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF967AD2A1DF75E00DC1722 /* DataManager.swift */; };
@@ -103,6 +106,7 @@
 		CD6373342A17A59E005476EB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CD6373362A17AF9D005476EB /* ImageHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHolder.swift; sourceTree = "<group>"; };
 		CD6373382A17B938005476EB /* GetCategoryName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryName.swift; sourceTree = "<group>"; };
+		CD697BF62A51D3A6009460EC /* BigHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigHeader.swift; sourceTree = "<group>"; };
 		CD6C41192A209B830028A2BC /* ProjektyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjektyView.swift; sourceTree = "<group>"; };
 		CD6C411E2A20E5040028A2BC /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		CD7D45852A35FBA70015AADF /* CountPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPost.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		CD7FC8132A24D449008B26A4 /* FaqList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqList.swift; sourceTree = "<group>"; };
 		CD8463AB2A24EC9D00323C8A /* FormElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormElement.swift; sourceTree = "<group>"; };
 		CD8463AD2A250DE200323C8A /* DonationForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationForms.swift; sourceTree = "<group>"; };
+		CD8FF1252A5186D5009B0DAF /* NewsBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBanner.swift; sourceTree = "<group>"; };
 		CD9ED3AF2A161D6D008F23D0 /* PaymentSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSymbol.swift; sourceTree = "<group>"; };
 		CD9ED3B22A162BD4008F23D0 /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		CD9ED3B42A163274008F23D0 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
@@ -149,6 +154,7 @@
 		CDAF7A3E2A15595A00F4976C /* Blik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blik.swift; sourceTree = "<group>"; };
 		CDBBCCC22A1D1EAB0038718E /* PostQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostQuery.swift; sourceTree = "<group>"; };
 		CDC560462A25C38F00AF6582 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		CDDF1C1C2A5208DD00B55E57 /* ButtonLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLink.swift; sourceTree = "<group>"; };
 		CDF817122A1B475300FB1461 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		CDF817152A1B603C00FB1461 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		CDF967AD2A1DF75E00DC1722 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -224,6 +230,8 @@
 				CD1916282A238F0C00203347 /* AnimatedLogo.swift */,
 				CDA95DD82A24B7810043AE8B /* LinkImageView.swift */,
 				CD7D45852A35FBA70015AADF /* CountPost.swift */,
+				CD8FF1252A5186D5009B0DAF /* NewsBanner.swift */,
+				CD697BF62A51D3A6009460EC /* BigHeader.swift */,
 			);
 			path = "Title and Footer";
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 			children = (
 				CDAF7A2D2A1512F100F4976C /* TabBarItem.swift */,
 				CDAF79FA2A14E61400F4976C /* MainView.swift */,
+				CDDF1C1C2A5208DD00B55E57 /* ButtonLink.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -490,6 +499,7 @@
 				CD6373272A178500005476EB /* DateConverter.swift in Sources */,
 				CDF817132A1B475300FB1461 /* CategoriesService.swift in Sources */,
 				CDAF7A372A15432600F4976C /* ProjectItem.swift in Sources */,
+				CDDF1C1D2A5208DD00B55E57 /* ButtonLink.swift in Sources */,
 				CDA95DD92A24B7810043AE8B /* LinkImageView.swift in Sources */,
 				CD9ED3B52A163274008F23D0 /* Title.swift in Sources */,
 				CD6373392A17B938005476EB /* GetCategoryName.swift in Sources */,
@@ -498,6 +508,7 @@
 				CD7FC8142A24D449008B26A4 /* FaqList.swift in Sources */,
 				CD1916292A238F0C00203347 /* AnimatedLogo.swift in Sources */,
 				CD6373292A178561005476EB /* PersistanceController.swift in Sources */,
+				CD697BF72A51D3A6009460EC /* BigHeader.swift in Sources */,
 				CD7FC8122A24D11A008B26A4 /* FaqService.swift in Sources */,
 				CDAF7A082A14ECD700F4976C /* StartView.swift in Sources */,
 				CDAF7A312A151FB900F4976C /* WelcomeBanner.swift in Sources */,
@@ -536,6 +547,7 @@
 				CDAF7A2E2A1512F100F4976C /* TabBarItem.swift in Sources */,
 				CD6373352A17A59E005476EB /* SafariView.swift in Sources */,
 				CD6373372A17AF9D005476EB /* ImageHolder.swift in Sources */,
+				CD8FF1262A5186D5009B0DAF /* NewsBanner.swift in Sources */,
 				CD7D45862A35FBA70015AADF /* CountPost.swift in Sources */,
 				CDAF79F92A14E61400F4976C /* FundacjaSantanderDesignApp.swift in Sources */,
 				CDC560472A25C38F00AF6582 /* PostDetailView.swift in Sources */,
@@ -669,7 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -688,7 +700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.20;
+				MARKETING_VERSION = 1.0.21;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -706,7 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"FundacjaSantanderDesign/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
@@ -725,7 +737,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.20;
+				MARKETING_VERSION = 1.0.21;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.mediagfx.FundacjaSantanderDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

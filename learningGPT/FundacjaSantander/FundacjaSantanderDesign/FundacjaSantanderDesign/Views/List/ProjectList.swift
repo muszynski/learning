@@ -34,7 +34,7 @@ struct ProjectList: View {
                             let imageData = post.postToThumb?.imageData
                             let projectItem = ProjectItem(imageData: imageData,
                                                           title: post.title ?? "",
-                                                          content: post.content ?? "",
+                                                           content: post.content ?? "",
                                                           categoryName: categoryNamesString,
                                                           link: post.link ?? "",
                                                           datePublication: formattedDate)

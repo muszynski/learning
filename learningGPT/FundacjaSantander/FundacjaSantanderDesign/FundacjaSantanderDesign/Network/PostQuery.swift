@@ -10,17 +10,33 @@ import CoreData
 
 class PostQuery : ObservableObject {
     
-    var totalPosts: Int = 0
-    var totalPages: Int = 0
-    var postsPerPage: Int = 20
-    var context = PersistenceController.shared.container.viewContext
-    var wordpressApi = WordPressAPI()
-    let imageProcessor = ImageProcessor()
-    @Published var fetchedPostsCount: Int = 0
+        var totalPosts: Int = 0
+        var totalPages: Int = 0
+        var currentPage: Int = 1  // dodanie currentPage
+        var context = PersistenceController.shared.container.viewContext
+        var wordpressApi = WordPressAPI()
+        let imageProcessor = ImageProcessor()
+        @Published var fetchedPostsCount: Int = 0
     
-    func fetchWPHeaders(completion: @escaping (Error?) -> Void) {
-        // Replace with your actual API URL
-        let url = URL(string: defaultLink + "/wp-json/wp/v2/posts")!
+    
+    func fetchNextPage(categories: [Int], postsPerPage: Int, completion: @escaping (Error?) -> Void) {
+            fetchAndSavePosts(categories: categories, pageNumber: currentPage) { [weak self] (posts, error) in
+                if let error = error {
+                    print("Failed to fetch or save posts: \(error)")
+                    completion(error)
+                } else {
+                    print("Fetched and saved \(posts?.count ?? 0) posts.")
+                    self?.currentPage += 1  // inkrementacja currentPage po pobraniu strony
+                    completion(nil)
+                }
+            }
+        }
+    
+    func fetchWPHeaders(categories: [Int], completion: @escaping (Error?) -> Void) {
+        guard let url = createUrl(categories: categories, postsPerPage: postPerPage) else {
+            completion(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "URL could not be created"]))
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -44,9 +60,6 @@ class PostQuery : ObservableObject {
         task.resume()
     }
     
-    
-    
-    
     // funkcja pobierajaca informacje i ilosci postow oraz o ilosc stron
     func getWPHeaders(from response: URLResponse?) -> (total: Int?, totalPages: Int?) {
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -61,16 +74,29 @@ class PostQuery : ObservableObject {
     
     
     // funkcja generujaca url wedlug parametrow jakie otrzymuje, id, post per page, page number
-    func createUrl(id: Int? = nil, postsPerPage: Int? = nil, pageNumber: Int? = nil) -> URL? {
+    func createUrl(categories: [Int]? = nil, postsPerPage: Int? = nil, pageNumber: Int? = nil) -> URL? {
         var urlComponents = URLComponents(string: defaultLink + "/wp-json/wp/v2/posts")
         
-        let parameters: [(String, Int?)] = [("categories", id), ("per_page", postsPerPage), ("page", pageNumber)]
-        urlComponents?.queryItems = parameters.compactMap { pair in
-            guard let value = pair.1 else { return nil }
-            return URLQueryItem(name: pair.0, value: "\(value)")
+        var queryItems = [URLQueryItem]()
+        
+        if let categories = categories {
+            let categoryString = categories.map(String.init).joined(separator: ",")
+            queryItems.append(URLQueryItem(name: "categories", value: categoryString))
         }
+        
+        if let postsPerPage = postsPerPage {
+            queryItems.append(URLQueryItem(name: "per_page", value: "\(postsPerPage)"))
+        }
+        
+        if let pageNumber = pageNumber {
+            queryItems.append(URLQueryItem(name: "page", value: "\(pageNumber)"))
+        }
+        
+        urlComponents?.queryItems = queryItems
+        
         return urlComponents?.url
     }
+    
     
     // funkcja obliczajaca ilosc wywolan do API jakie musza byc wykonane
     func calculateNumberOfRequests(totalPosts: Int, postsPerPage: Int) -> Int {
@@ -81,28 +107,40 @@ class PostQuery : ObservableObject {
     }
     
     // funkcja wywołująca ilość zadań API w zależności od ilości postów
-    func fetchAllPostsInBackground(postsPerPage: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
-        let totalRequests = calculateNumberOfRequests(totalPosts: totalPosts, postsPerPage: postsPerPage)
-        var allPosts: [WordpressPost] = []
-        var error: Error?
-        
-        for currentPage in 1...totalRequests {
-            fetchAndSavePosts(pageNumber: currentPage) { (posts, fetchError) in
-                if let fetchError = fetchError {
-                    print("Failed to fetch posts:", fetchError)
-                    error = fetchError
-                    completion(nil, error)
-                } else if let posts = posts {
-                    let newPosts = posts.filter { !self.isPostStoredInCoreData(postId: Int($0.id)) }
-                    allPosts.append(contentsOf: newPosts)
-                }
-                
-                if currentPage == totalRequests {
-                    completion(allPosts, nil)
+    func fetchAllPostsInBackground(categories: [Int], postsPerPage: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
+        fetchWPHeaders(categories: categories) { [weak self] error in
+            guard let strongSelf = self else {
+                completion(nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Self is nil"]))
+                return
+            }
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            let totalRequests = strongSelf.calculateNumberOfRequests(totalPosts: strongSelf.totalPosts, postsPerPage: postsPerPage)
+            var allPosts: [WordpressPost] = []
+            var error: Error?
+            
+            for currentPage in 1...totalRequests {
+                strongSelf.fetchAndSavePosts(categories: categories, pageNumber: currentPage) { (posts, fetchError) in
+                    if let fetchError = fetchError {
+                        print("Failed to fetch posts:", fetchError)
+                        error = fetchError
+                        completion(nil, error)
+                    } else if let posts = posts {
+                        let newPosts = posts.filter { !strongSelf.isPostStoredInCoreData(postId: Int($0.id)) }
+                        allPosts.append(contentsOf: newPosts)
+                    }
+                    
+                    if currentPage == totalRequests {
+                        completion(allPosts, nil)
+                    }
                 }
             }
         }
     }
+    
     
     // Ta metoda sprawdza, czy są już jakieś posty zapisane w Core Data.
     func arePostsStoredInCoreData() -> Bool {
@@ -117,8 +155,8 @@ class PostQuery : ObservableObject {
         }
     }
     
-    func fetchNewPostsAndSaveToCoreData(postsPerPage: Int, completion: @escaping (Error?) -> Void) {
-        fetchAllPostsInBackground(postsPerPage: postsPerPage) { (posts, error) in
+    func fetchNewPostsAndSaveToCoreData(categories: [Int], postsPerPage: Int, completion: @escaping (Error?) -> Void) {
+        fetchAllPostsInBackground(categories: categories, postsPerPage: postsPerPage) { (posts, error) in
             if let error = error {
                 print("Failed to fetch or save posts: \(error)")
                 completion(error)
@@ -128,9 +166,10 @@ class PostQuery : ObservableObject {
             }
         }
     }
+
     
-    func fetchAndSavePosts(pageNumber: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
-        wordpressApi.fetchPosts(pageNumber: pageNumber) { (result: Result<([WordpressPost], URLResponse?), NetworkError>) in
+    func fetchAndSavePosts(categories: [Int], pageNumber: Int, completion: @escaping ([WordpressPost]?, Error?) -> Void) {
+        wordpressApi.fetchPosts(categories: categories, pageNumber: pageNumber) { (result: Result<([WordpressPost], URLResponse?), NetworkError>) in
             switch result {
             case .success(let (posts, _)):
                 savePostsToCoreData(posts: posts) { error in
@@ -172,7 +211,7 @@ class PostQuery : ObservableObject {
     }
 
     
-    // Metoda isPostStoredInCoreData() musi być zdefiniowana w klasie PostQuery.
+    // Sprawdzenie czy post jest już w CoreData.
     func isPostStoredInCoreData(postId: Int) -> Bool {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "idPost == %@", NSNumber(value: postId))

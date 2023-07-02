@@ -50,6 +50,13 @@ struct PostDetailView: View {
                     .foregroundColor(Color("fontGray"))
                     .padding(.top)
                 
+                HStack {
+                    Spacer()
+                    ButtonLink(buttonText: "Pełna wersja postu", urlButton: URL(string: post.link ?? defaultLink))
+                    Spacer()
+                }
+
+                
                 ContactInfo()
             }
             .padding()

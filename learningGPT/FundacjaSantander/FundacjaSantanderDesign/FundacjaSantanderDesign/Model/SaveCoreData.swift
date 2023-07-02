@@ -78,6 +78,71 @@ func savePostsToCoreData(posts: [WordpressPost], completion: @escaping (Error?) 
         }
     }
 }
+
+//funkcja zapisujaca projekty
+
+func saveProjectToCoreData(projects: [WordpressPost], completion: @escaping (Error?) -> Void) {
+    
+    let textProcessor = TextProcessor()
+    
+    let context = PersistenceController.shared.container.viewContext
+    context.perform {
+        for project in projects {
+            let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "idProject == %@", NSNumber(value: project.id))
+            
+            do {
+                let fetchedProjects = try context.fetch(fetchRequest)
+                
+                var newProject: Project!
+                if let existingProject = fetchedProjects.first {
+                    let serverModifiedDate = customISO8601DateFormatter().date(from: project.modified)
+                    if serverModifiedDate?.compare(existingProject.modified!) == .orderedDescending {
+                        newProject = existingProject
+                    } else {
+                        continue
+                    }
+                } else {
+                    newProject = Project(context: context)
+                    newProject.idProject = Int16(project.id)
+                }
+                
+                newProject.date = customISO8601DateFormatter().date(from: project.date)
+                newProject.modified = customISO8601DateFormatter().date(from: project.modified)
+                newProject.slug = project.slug
+                newProject.status = project.status
+                newProject.type = project.type
+                newProject.link = project.link
+                newProject.title = textProcessor.cleanHTMLSwiftSoup(stringToClean: project.title.rendered)
+                newProject.content = textProcessor.cleanHTMLAndPreserveParagraphs(stringToClean: project.content.rendered)
+                newProject.excerpt = project.excerpt.rendered
+                newProject.author = Int16(project.author)
+                newProject.categories = project.categories as NSArray? ?? []
+                newProject.tags = project.tags as NSArray? ?? []
+                newProject.thumbnails = project.thumbnails.stringValue
+                
+            } catch let error as NSError {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+        }
+        
+        do {
+            try context.save()
+            DispatchQueue.main.async {
+                completion(nil)
+            }
+        } catch {
+            DispatchQueue.main.async {
+                completion(error)
+            }
+        }
+    }
+}
+
+
 //funkcja zapisujaca kategorie
 func saveCategoriesToCoreData(categories: [Category], completion: @escaping (Error?) -> Void) {
     let context = PersistenceController.shared.container.viewContext

@@ -22,7 +22,7 @@ struct TestJSON: View {
         .onAppear {
             print("Przed pobraniem postów: \(wordpressAPI.posts)")
             
-            wordpressAPI.fetchPosts(pageNumber: 1) { result in
+            wordpressAPI.fetchPosts(categories: newsCategory, pageNumber: 1) { result in
                 switch result {
                 case .success(let (posts, _)):
                     DispatchQueue.main.async {

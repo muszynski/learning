@@ -12,9 +12,10 @@ class WordPressAPI : ObservableObject {
     @Published var posts: [WordpressPost] = []
     
     private var baseURL = defaultLink + "/wp-json/wp/v2"
-
-    func fetchPosts(pageNumber: Int, completion: @escaping (Result<([WordpressPost], URLResponse?), NetworkError>) -> Void) {
-        let url = URL(string: "\(baseURL)/posts?&per_page=\(postPerPage)&page=\(pageNumber)")!
+    
+    func fetchPosts(categories: [Int], pageNumber: Int, completion: @escaping (Result<([WordpressPost], URLResponse?), NetworkError>) -> Void) {
+        let categoriesParam = categories.map { String($0) }.joined(separator: ",")
+        let url = URL(string: "\(baseURL)/posts?categories=\(categoriesParam)&per_page=\(postPerPage)&page=\(pageNumber)")!
         fetchData(from: url, completion: completion)
     }
 

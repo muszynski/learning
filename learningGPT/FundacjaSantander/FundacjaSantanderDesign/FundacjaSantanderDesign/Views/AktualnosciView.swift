@@ -12,12 +12,14 @@ struct AktualnosciView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Title(title: "Aktualności")
+                    BigHeader(headerType: .news)
                     NewsLists()
-                    ContactInfo()
                 }
             }
+            .edgesIgnoringSafeArea(.top) // dodane, aby zignorować bezpieczne obszary dla ScrollView
+            .navigationViewStyle(StackNavigationViewStyle()) // dodane, aby usunąć domyślne marginesy NavigationView
         }
+        .background(Color("bgGray"))
     }
 }
 
@@ -27,4 +29,3 @@ struct AktualnosciView_Previews: PreviewProvider {
         AktualnosciView()
     }
 }
-

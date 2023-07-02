@@ -12,10 +12,22 @@ struct Title: View {
     @State var title = "Tytuł ekranu"
     
     var body: some View {
-        HStack {
+        VStack {
+            Rectangle()
+              .foregroundColor(.clear)
+              .frame(width: 300, height: 36.7347)
+              .background(
+                Image("headerfundacjaLogo")
+                  .resizable()
+                  .aspectRatio(contentMode: .fill)
+                  .frame(width: 300, height: 36.73469543457031)
+                  .clipped()
+              )
             Text(title)
                 .font(.custom("SantanderText-Regular", size: 14))
-                .frame(maxWidth: .infinity, alignment: .leading)
+//                .multilineTextAlignment(.trailing)
+                .padding(.trailing, 20.0)
+                .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .padding([.leading, .trailing], UIScreen.main.bounds.width * 0.05) // 5% padding on each side will make the width 90% of the screen width
     }

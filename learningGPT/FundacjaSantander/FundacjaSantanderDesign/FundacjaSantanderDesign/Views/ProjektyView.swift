@@ -12,7 +12,8 @@ struct ProjektyView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Title(title: "Projekty i programy")
+                BigHeader(headerType: .project)
+                    
                 ProjectList()
             }
         }

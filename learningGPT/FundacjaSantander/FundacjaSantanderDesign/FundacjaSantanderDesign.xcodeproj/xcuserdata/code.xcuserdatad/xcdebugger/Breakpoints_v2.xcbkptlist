@@ -14,25 +14,9 @@
             filePath = "FundacjaSantanderDesign/Network/PostQuery.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "getWPHeaders(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "222B6892-3FB2-4689-8C5F-59183A98BB5A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FundacjaSantanderDesign/Network/PostQuery.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "fetchAllPostsInBackground(postsPerPage:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,8 +30,8 @@
             filePath = "FundacjaSantanderDesign/Network/PostQuery.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "arePostsStoredInCoreData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,9 +46,9 @@
             filePath = "FundacjaSantanderDesign/Network/PostQuery.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "fetchNewPostsAndSaveToCoreData(postsPerPage:completion:)"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "fetchNewPostsAndSaveToCoreData(categories:postsPerPage:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,25 +62,9 @@
             filePath = "FundacjaSantanderDesign/Network/PostQuery.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "fetchAndSavePosts(pageNumber:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "26E20EF5-B76E-42E6-8E29-DDDEE7FC529A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FundacjaSantanderDesign/Network/DataManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "fetchAndUpdateData(postsPerPage:completion:)"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "fetchAndSavePosts(categories:pageNumber:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

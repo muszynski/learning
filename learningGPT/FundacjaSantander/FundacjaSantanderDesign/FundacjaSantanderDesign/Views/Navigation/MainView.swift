@@ -32,19 +32,19 @@ struct MainView: View {
             GeometryReader { geometry in
                 HStack(spacing: 0) {
                     TabBarItem(icon: "start", title: "Start", isSelected: selectedTab == 0)
-                        .frame(width: geometry.size.width / 5)
+                        .frame(width: geometry.size.width / 4)
                         .onTapGesture { selectedTab = 0 }
                     TabBarItem(icon: "aktualnosci", title: "Aktualności", isSelected: selectedTab == 1)
-                        .frame(width: geometry.size.width / 5)
+                        .frame(width: geometry.size.width / 4)
                         .onTapGesture { selectedTab = 1 }
                     TabBarItem(icon: "pomagaj", title: "Pomagaj", isSelected: selectedTab == 2)
-                        .frame(width: geometry.size.width / 5)
+                        .frame(width: geometry.size.width / 4)
                         .onTapGesture { selectedTab = 2 }
-                    TabBarItem(icon: "projekty", title: "Projekty", isSelected: selectedTab == 3)
-                        .frame(width: geometry.size.width / 5)
-                        .onTapGesture { selectedTab = 3 }
+//                    TabBarItem(icon: "projekty", title: "Projekty", isSelected: selectedTab == 3)
+//                        .frame(width: geometry.size.width / 5)
+//                        .onTapGesture { selectedTab = 3 }
                     TabBarItem(icon: "faq", title: "FAQ", isSelected: selectedTab == 4)
-                        .frame(width: geometry.size.width / 5)
+                        .frame(width: geometry.size.width / 4)
                         .onTapGesture { selectedTab = 4 }
                 }
             }.frame(height: 50)
